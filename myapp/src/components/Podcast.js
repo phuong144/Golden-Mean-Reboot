@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-export class Banner extends React.Component{
+export class Podcast extends React.Component{
     constructor(props){
         super(props);
         this.state = {};
@@ -17,7 +17,7 @@ export class Banner extends React.Component{
             <div className="container-fluid about" id="about" style={parentContainerStyles}>
                 <div className="row">
                     <div className="col-sm-4 col-sm-offset-2">
-                    <img src={require("../../public/images/Logo.jpg")} className="img-responsive aboutpic" style={{width: '30em', height: '30em'}}/>
+                    <img src={require("./Logo.jpg")} className="img-responsive aboutpic" style={{width: '30em', height: '30em'}}/>
                     </div>
                     <div className="col-sm-5">
                     <br></br>
