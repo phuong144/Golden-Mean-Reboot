@@ -22,3 +22,6 @@ firestore.indexes.json
 firestore.rules
 storage.rules
 .firebase
+
+#firebaseapi
+App.js
