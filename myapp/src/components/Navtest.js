@@ -6,21 +6,32 @@ import {NavDropdown} from 'react-bootstrap';
 import {Form} from 'react-bootstrap';
 import {FormControl} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
-
+import FacebookLogin from 'react-facebook-login';
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 
 export class Navtest extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {};
-    }
+
+    uiConfig = {
+        signInFlow: "popup",
+        signInOptions: [
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        callbacks: {
+          signInSuccess: () => false
+        }
+      }
+
     render(){
         return (
-            <Navbar bg="light" expand="lg">
+            <Navbar expand="lg" fixed="top" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
-                        width="30"
-                        height="30"
+                        width="40"
+                        height="40"
                         className="d-inline-block align-top"
                         alt="React Bootstrap logo"
                     />           
@@ -28,32 +39,16 @@ export class Navtest extends React.Component{
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">About</Nav.Link>
-                        <Nav.Link href="#link">Podcasts</Nav.Link>
-                        <Nav.Link href="#link">Contacts</Nav.Link>
+                        <Nav.Link href="#home"><h3 style={{color :"white"}}>Home</h3></Nav.Link>
+                        <Nav.Link href="#link"><h3 style={{color :"white"}}>About</h3></Nav.Link>
+                        <Nav.Link href="#link"><h3 style={{color :"white"}}>Podcasts</h3></Nav.Link>
+                        <Nav.Link href="#link"><h3 style={{color :"white"}}>Contacts</h3></Nav.Link>
                     </Nav>
-                    <NavDropdown title="Login" id="basic-nav-dropdown">
-                    <Form>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
-                            <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                            </Form.Text>
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicChecbox">
-                            <Form.Check type="checkbox" label="Check me out" />
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </Form>
+                    <NavDropdown alignRight bg="transparent" title="Login" id="basic-nav-dropdown" style={{color :"transparent", fontSize: "2em"}}> 
+                    <StyledFirebaseAuth
+                        uiConfig={this.uiConfig}
+                        firebaseAuth={firebase.auth()}
+                    />
                     </NavDropdown>
                     
                 </Navbar.Collapse>
