@@ -9,6 +9,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 ReactDOM.render(
-  <Navtest />,
+  <App />,
   document.getElementById('root')
 );
