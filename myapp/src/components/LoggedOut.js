@@ -8,8 +8,12 @@ import {Landing} from './Landing';
 export class LoggedOut extends React.Component{
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+    
+
+        };
     }
+
 
     render(){
 
@@ -17,7 +21,7 @@ export class LoggedOut extends React.Component{
 
         return (  
             <div>
-                <Navtest />
+                
                 <Landing />
                 <div>
                     <Home />

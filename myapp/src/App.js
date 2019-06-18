@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-
+import {Navtest} from './components/Navtest';
 import {LoggedOut} from './components/LoggedOut';
+import {About} from './components/About';
+import {BrowserRouter as Router, Route, Link } from "react-router";
 
 firebase.initializeApp({
   apiKey: "AIzaSyAP_yZuslfF5ItU2w3IEH-cwejhCtIniw8",
@@ -10,42 +12,31 @@ firebase.initializeApp({
 })
 
 class App extends Component {
-  state = { isSignedIn: false }
-  uiConfig = {
-    signInFlow: "popup",
-    signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID
-    ],
-    callbacks: {
-      signInSuccess: () => false
-    }
-  }
+  constructor(props){
+    super(props);
+    this.state={
+        isSignedIn: false,
+        home: false,
+        about: false,
+        podcasts: false
 
-  componentDidMount = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn: !!user })
-      console.log("user", user)
-    })
-  }
+
+    }
+}
+
 
   render() {
     return (
       <div className="App">
-        {this.state.isSignedIn ? (
-          <span>
-            <div>Signed In!</div>
-            <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-            <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
-            <img
-              alt="profile picture"
-              src={firebase.auth().currentUser.photoURL}
-            />
-          </span>
-        ) : (
+          
+          <Navtest />
           <LoggedOut />
-        )}
+          
+        
+
+        
+          
+        
       </div>
     )
   }
