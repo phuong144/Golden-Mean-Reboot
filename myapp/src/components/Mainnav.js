@@ -1,19 +1,16 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import {Navbar} from 'react-bootstrap';
 import {Nav} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
-import {Form} from 'react-bootstrap';
-import {FormControl} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
-import FacebookLogin from 'react-facebook-login';
+import {Podcast} from './Podcast';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import { BrowserRouter as Router, Route, Link } from "react-router";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {About} from './About';
-import { LoggedOut } from './LoggedOut';
+import {Home} from './Home';
 
-export class Navtest extends React.Component{
+
+export class Mainnav extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -43,7 +40,7 @@ export class Navtest extends React.Component{
 
     render(){
         return (
-            
+            <Router>
             <Navbar expand="lg" fixed="top" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
@@ -56,12 +53,14 @@ export class Navtest extends React.Component{
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className='mr-auto'>
-                    
-                        <Nav.Link to="/"><h3 style={{color :"white"}}>Home</h3></Nav.Link>
-                        <Nav.Link to="/About"><h3 style={{color :"white"}}>About</h3></Nav.Link>
-                        <Nav.Link to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Nav.Link>
-                        <Nav.Link to="/Contacts"><h3 style={{color :"white"}}>Contacts</h3></Nav.Link>
-
+                    <div className='row' style={{paddingLeft:'5px', paddingLeft:'5px'}}>
+                      
+                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>
+                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
+                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
+                        
+                      
+                    </div>
                     
                 </Nav>
                     
@@ -88,7 +87,14 @@ export class Navtest extends React.Component{
                 </Navbar.Collapse>
             </Navbar>
 
-            
+            <Route exact path='/' component={Home} />
+          
+            <Route path='/About' component={About} />            
+            <Route path='/Podcasts' component={Podcast}  />
+                        
+
+           
+            </Router>
           
         );
     }

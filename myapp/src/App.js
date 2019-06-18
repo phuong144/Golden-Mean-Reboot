@@ -1,10 +1,7 @@
 import React, { Component } from "react"
 import firebase from "firebase"
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-import {Navtest} from './components/Navtest';
-import {LoggedOut} from './components/LoggedOut';
-import {About} from './components/About';
-import {BrowserRouter as Router, Route, Link } from "react-router";
+import {Mainnav} from './components/Mainnav';
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyAP_yZuslfF5ItU2w3IEH-cwejhCtIniw8",
@@ -29,8 +26,7 @@ class App extends Component {
     return (
       <div className="App">
           
-          <Navtest />
-          <LoggedOut />
+          <Mainnav />
           
         
 

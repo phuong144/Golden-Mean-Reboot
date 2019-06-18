@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import {Banner} from './Banner'
 
 export class Podcast extends React.Component{
     constructor(props){
@@ -11,7 +11,7 @@ export class Podcast extends React.Component{
 
 
         return (
-            <p> test</p>
+            <Banner />
         
         );
     }

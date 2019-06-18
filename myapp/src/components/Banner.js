@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 
 export class Banner extends React.Component{
     constructor(props){
@@ -10,7 +9,8 @@ export class Banner extends React.Component{
     render(){
 
         const parentContainerStyles = {
-            backgroundColor: 'khaki'
+            backgroundColor: 'khaki',
+            marginTop: '8rem'
         };
 
         return (
