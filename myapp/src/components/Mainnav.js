@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar} from 'react-bootstrap';
 import {Nav} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
-import {Podcast} from './Podcast';
+import {PodcastPage} from './PodcastPage';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -66,14 +66,17 @@ export class Mainnav extends React.Component{
                     
                     {this.state.isSignedIn ? (
                         <Nav className='mr-auto'>
-                        
-                        <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-                        <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
+                        <div className='row'>
+                        <h1 style={{paddingLeft:'20px'}}>Welcome {firebase.auth().currentUser.displayName}</h1>
                         <img
                           alt="profile picture"
                           src={firebase.auth().currentUser.photoURL}
+                          
                         />
                         
+                        
+                        <button  onClick={() => firebase.auth().signOut()}>Sign out!</button>
+                        </div>
                         </Nav> ) : (
                             <NavDropdown alignRight bg="transparent" title="Login" id="basic-nav-dropdown" style={{color :"transparent", fontSize: "2em"}}> 
                             <StyledFirebaseAuth
@@ -90,7 +93,7 @@ export class Mainnav extends React.Component{
             <Route exact path='/' component={Home} />
           
             <Route path='/About' component={About} />            
-            <Route path='/Podcasts' component={Podcast}  />
+            <Route path='/Podcasts' component={PodcastPage}  />
                         
 
            
