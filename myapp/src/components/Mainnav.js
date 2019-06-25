@@ -16,36 +16,50 @@ export class Mainnav extends React.Component{
         super(props);
         this.state={
             isSignedIn: false,
+            admin: false
         }
     }
     
     uiConfig = {
         signInFlow: "popup",
         signInOptions: [
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.FacebookAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         callbacks: {
           signInSuccess: () => false
         }
-      }
+    }
 
-      componentDidMount = () => {
+    componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
-          this.setState({ isSignedIn: !!user })
-          console.log("user", user)
+            
+                
+                
+            
+            
+            if(user){
+                if(firebase.auth().currentUser.displayName == "Patrick Phuong"){
+                    this.setState({isSignedIn: !!user,admin:true});
+                    console.log(user.displayName + " is an admin");
+                }else{
+                    this.setState({isSignedIn: !!user, admin:false})
+                }
+            } else {
+                this.setState({isSignedIn: !!user,admin:false});
+                console.log("Fully logged out");
+            }
+            
         })
-      }
 
-      uploadPodcast(){
-        alert(UploadForm)
-      }
+    }                  
+    
 
     render(){
+        
         return (
             <Router>
-            <Navbar expand="lg" fixed="top" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
+            <Navbar expand="lg" fixed="top" style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
                         width="40"
@@ -68,35 +82,53 @@ export class Mainnav extends React.Component{
                     
                 </Nav>
                     
-                    {this.state.isSignedIn ? 
-                        
-                        (
-                        
-
-                        <Nav className='mr-auto'>
+                    {this.state.admin ?                        
+                        (                       
+                        <Nav pullRight>
                             <div className='row'>
-                                <h1 style={{paddingLeft:'20px'}}>Welcome {firebase.auth().currentUser.displayName}</h1>
+                                <h1 style={{ color :"white", marginTop:"8px", marginRight:"10px", marginLeft:"10px", justifyContent:"center"}}>Welcome {firebase.auth().currentUser.displayName}</h1>
                                 <img
                                     alt="profile picture"
-                                    src={firebase.auth().currentUser.photoURL}                         
+                                    src={firebase.auth().currentUser.photoURL}   
+                                    style={{marginRight:"10px", marginLeft:"10px"}}                      
                                 />                                              
-                                <button  onClick={() => firebase.auth().signOut()}>Sign out!</button>
-                                <NavDropdown title="Upload" id="basic-nav-dropdown">
+                                <button style={{marginRight:"10px", marginLeft:"10px"}} onClick={() => firebase.auth().signOut()}>Sign out!</button>
+                                
+                                <NavDropdown title="Upload" id="basic-nav-dropdown" alignRight>
                                     <UploadForm />
                                 </NavDropdown>
-
+                                
                             </div>
-                        </Nav> 
+                        </Nav>                                             
+                        ) : 
                         
-                        
-                        ) : (
-                            <NavDropdown alignRight bg="transparent" title="Login" id="basic-nav-dropdown" style={{color :"transparent", fontSize: "2em"}}> 
+                    this.state.isSignedIn ?  
+                        (
+                            <Nav pullRight>
+                            <div className='row'>
+                                <h1 style={{ color :"white", marginTop:"8px", marginRight:"10px", marginLeft:"10px", justifyContent:"center"}}>Welcome {firebase.auth().currentUser.displayName}</h1>
+                                <img
+                                    alt=""
+                                    src={firebase.auth().currentUser.photoURL}  
+                                    style={{marginRight:"10px", marginLeft:"10px"}}                       
+                                />                                              
+                                <button style={{marginRight:"10px", marginLeft:"10px"}} onClick={() => firebase.auth().signOut()}>Sign out!</button>                      
+                    
+                                
+                            </div>
+                            </Nav> 
+                        ) :
+
+                        (
+                            <NavDropdown alignRight bg="transparent" title="Login" id="basic-nav-dropdown" style={{color :"white", fontSize: "2em"}}> 
                             <StyledFirebaseAuth
                                 uiConfig={this.uiConfig}
                                 firebaseAuth={firebase.auth()}
                             />
                             </NavDropdown>
-                        )}
+                        )                  
+                      
+                    }
                     
                     
                 </Navbar.Collapse>

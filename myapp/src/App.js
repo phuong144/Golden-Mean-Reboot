@@ -13,23 +13,14 @@ class App extends Component {
         home: false,
         about: false,
         podcasts: false
-
-
     }
 }
 
 
   render() {
     return (
-      <div className="App">
-          
-          <Mainnav />
-          
-        
-
-        
-          
-        
+      <div className="App">         
+          <Mainnav />                                
       </div>
     )
   }
