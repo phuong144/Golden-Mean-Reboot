@@ -1,41 +1,53 @@
 import React from 'react';
-import firebase from "firebase";
+import app from "firebase/app";
+import 'firebase/firestore';
+
+
 
 export class Podcast extends React.Component{
     constructor(props){
         super(props);
-        this.state = {};
-    }
+        this.state={
+            title:"",
+            url:"",
+            intro:'',
+            description:''
+        }
+        
+    }       
 
     render(){
-        let db = firebase.firestore().collections("podcasts");
-        let document = db.doc("pod"+this.props.i).get();
-            return (
-            
-                <div className="col-sm-6">
-                    <div className="box">
-                        <h3>{document.data().title}</h3>
-                        <audio 
-                            id="audio" 
-                            controls="controls" 
-                            className="audio" 
-                            src={document.data().url} 
-                            typeof="audio/mpeg" 
-                            preload="none" 
-                            onPlay="logInfo()" 
-                            onLoadedData="playAudio(this)">
-                        </audio>
-                        <p>{document.data().intro}</p>
-                        <p>{document.data().description}</p>
-                    </div>
+       
     
-                </div>
+        let docRef = app.firestore().collection("podcasts").doc("pod"+this.props.num);
+        docRef.get().then(function(doc){
+            this.setState({
+                title: doc.data().title,
+                url: doc.data().url,
+                intro: doc.data().intro,
+                description: doc.data().description
+            });
+        }.bind(this));
             
-            
-            );
-        
+        return (
+            <div className="col-sm-6">
+                <div className="box">
+                <h3>{this.state.title}</h3>
+                <audio
+                    src={this.state.url}
+                    
+                    controls="controls"
+                    className="audio"
+                    typeof="audio/mpeg"
+                    preload="none"
+                    
 
-        
+                ></audio>
+                <p>{this.state.intro}</p>
+                <p>{this.state.description}</p>
+            </div>
+            </div>
+        );                                    
     }
 
 }

@@ -3,10 +3,7 @@ import firebase from "firebase"
 import {Mainnav} from './components/Mainnav';
 
 
-firebase.initializeApp({
-  apiKey: "AIzaSyAP_yZuslfF5ItU2w3IEH-cwejhCtIniw8",
-  authDomain: "the-golden-mean.firebaseapp.com"
-})
+
 
 class App extends Component {
   constructor(props){

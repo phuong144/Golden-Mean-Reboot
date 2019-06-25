@@ -8,6 +8,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {About} from './About';
 import {Home} from './Home';
+import {UploadForm} from './UploadForm';
 
 
 export class Mainnav extends React.Component{
@@ -30,12 +31,15 @@ export class Mainnav extends React.Component{
         }
       }
 
-
       componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
           this.setState({ isSignedIn: !!user })
           console.log("user", user)
         })
+      }
+
+      uploadPodcast(){
+        alert(UploadForm)
       }
 
     render(){
@@ -64,20 +68,28 @@ export class Mainnav extends React.Component{
                     
                 </Nav>
                     
-                    {this.state.isSignedIn ? (
+                    {this.state.isSignedIn ? 
+                        
+                        (
+                        
+
                         <Nav className='mr-auto'>
-                        <div className='row'>
-                        <h1 style={{paddingLeft:'20px'}}>Welcome {firebase.auth().currentUser.displayName}</h1>
-                        <img
-                          alt="profile picture"
-                          src={firebase.auth().currentUser.photoURL}
-                          
-                        />
+                            <div className='row'>
+                                <h1 style={{paddingLeft:'20px'}}>Welcome {firebase.auth().currentUser.displayName}</h1>
+                                <img
+                                    alt="profile picture"
+                                    src={firebase.auth().currentUser.photoURL}                         
+                                />                                              
+                                <button  onClick={() => firebase.auth().signOut()}>Sign out!</button>
+                                <NavDropdown title="Upload" id="basic-nav-dropdown">
+                                    <UploadForm />
+                                </NavDropdown>
+
+                            </div>
+                        </Nav> 
                         
                         
-                        <button  onClick={() => firebase.auth().signOut()}>Sign out!</button>
-                        </div>
-                        </Nav> ) : (
+                        ) : (
                             <NavDropdown alignRight bg="transparent" title="Login" id="basic-nav-dropdown" style={{color :"transparent", fontSize: "2em"}}> 
                             <StyledFirebaseAuth
                                 uiConfig={this.uiConfig}
