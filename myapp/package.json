@@ -8,6 +8,7 @@
     "react-audio-player": "^0.11.1",
     "react-dom": "^16.8.6",
     "react-facebook-login": "^4.1.1",
+    "react-firebase-file-uploader": "^2.4.2",
     "react-firebaseui": "^3.1.2",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",

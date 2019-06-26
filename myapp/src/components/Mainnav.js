@@ -2,12 +2,10 @@ import React from 'react';
 import {Navbar} from 'react-bootstrap';
 import {Nav} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
-import {PodcastPage} from './PodcastPage';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {About} from './About';
-import {Home} from './Home';
+import { BrowserRouter as Link } from "react-router-dom";
+
 import {UploadForm} from './UploadForm';
 
 
@@ -38,7 +36,7 @@ export class Mainnav extends React.Component{
             let docRef = firebase.firestore().collection('admins').doc(uid);  
             docRef.get().then(function(doc){
                 if(doc.exists){
-                    if(uid == doc.id && user){
+                    if(uid === doc.id && user){
                         this.setState({
                             uid: true,
                             isSignedIn: !!user,
@@ -111,12 +109,12 @@ export class Mainnav extends React.Component{
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className='mr-auto'>
-                    <div className='row' style={{paddingLeft:'5px', paddingLeft:'5px'}}>
+                    <div className='row' style={{paddingLeft:'5px', paddingRight:'5px'}}>
                       
-                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>
+                        <Link style={{paddingLeft:'10px', paddingRight:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>
                         
-                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
-                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
+                        <Link style={{paddingLeft:'10px', paddingRight:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
+                        <Link style={{paddingLeft:'10px', paddingRight:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
                       
                     </div>
                     
@@ -124,7 +122,7 @@ export class Mainnav extends React.Component{
                     
                     {this.state.admin ?                        
                         (                       
-                        <Nav pullRight>
+                        <Nav>
                             <div className='row'>
                                 <h1 style={{ color :"white", marginTop:"8px", marginRight:"10px", marginLeft:"10px", justifyContent:"center"}}>Welcome {firebase.auth().currentUser.displayName}</h1>
                                 <img

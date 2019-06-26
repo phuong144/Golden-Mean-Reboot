@@ -24,4 +24,4 @@ storage.rules
 .firebase
 
 #firebaseapi
-index.js
+firebase-config.js

@@ -19,7 +19,7 @@ export class About extends React.Component{
                 <div className="col-sm-5 col-sm-offset-1">
                     <div className="block">
                         <div className="thumbnail">
-                        <img src="images/Swan2.jpg" className="img-rounded img-responsive pics"/>
+                        <img src="images/Swan2.jpg" alt="" className="img-rounded img-responsive pics"/>
                         </div>
                         <h3>Swan Ye Htut</h3>
                         <h5>Email: swanyehtut91920@gmail.com</h5>
@@ -34,7 +34,7 @@ export class About extends React.Component{
             <div className="col-sm-5">
                 <div className="block">
                     <div className="thumbnail">
-                        <img src="images/Tim1.jpg" className="img-rounded img-responsive pics"/>
+                        <img src="images/Tim1.jpg" className="img-rounded img-responsive pics" alt=""/>
                     </div>
                     <h3>Timothy Scheuermann</h3>
                     <h5>Email: timothyscheuermann@gmail.com</h5>
