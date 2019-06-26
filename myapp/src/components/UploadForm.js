@@ -10,13 +10,20 @@ export class UploadForm extends React.Component{
             Title:"",
             Intro:"",
             Description:"",
-            file:[]
+            file:"",
+            avatarURL:''
         })
-        this.handleFormSubmit.bind(this)
-        this.handleDescriptionChange.bind(this)
-        this.handleFileChange.bind(this)
-        this.handleFormSubmit.bind(this)
-        this.handleIntroChange.bind(this)
+
+        this.setRef = ref => {
+            this.file = ref;
+        }
+
+        this.handleTitleChange = this.handleTitleChange.bind(this);
+        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+        this.handleFileChange = this.handleFileChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleIntroChange = this.handleIntroChange.bind(this);
+        
     }
 
     handleTitleChange(e){
@@ -37,68 +44,55 @@ export class UploadForm extends React.Component{
         })
     }
     handleFileChange(e){
+        const file1=this.file.files[0];
+        
         this.setState({
-            file:[e.target.value]
+            file:file1
         })
     }
 
     handleFormSubmit(){
+        
         let db = app.firestore().collection("podcasts");
-        db.get().then(function(docs){
+        db.get().then((function(docs){
             let storageRef = app.storage().ref();
             var metadata={
                 contentType:'audio/mpeg'
             };
-            var uploadTask = storageRef.child('podcasts/' + this.state.file.name).put(this.state.file, metadata);
-            uploadTask.on(app.storage.TaskEvent.STATE_CHANGED,
-            function(snapshot) {
-            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            var mainImage = storageRef.child('podcasts/', this.state.file.name);
+            mainImage.put(this.state.file).then((snapshot) => {
+                mainImage.getDownloadURL().then((url) => {
+                    this.setState({
+                        avatarURL: url,
+                    })
+                    
+                })
+            })
             
-            console.log('Upload is ' + progress + '% done');
-            switch (snapshot.state) {
-                case app.storage.TaskState.PAUSED:
-                console.log('Upload is paused');
-                break;
-                case app.storage.TaskState.RUNNING:
-                console.log('Upload is running');
-                break;
-            }
-            },
-            function(err) {
-            console.log("Error: ", err);
-            },
-            function() {
-            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-
             db.doc("pod"+(1+docs.size)).update({
-                "url": downloadURL
+                "url": this.state.avatarURL
             })
-            
-            
-
-
-            })
-            });
-
             db.doc("pod"+(1+docs.size)).set({
                 "title":this.state.Title,
                 "intro":this.state.Intro,
                 "description":this.state.Description,
                 "url":""
             })
-            })
-
+            
+           
+        })) 
         
-    }
+    }              
+    
 
     render(){
         return(
             <form onSubmit={this.handleFormSubmit}>
-                <input placeholder="Title" type="text" onChange={this.handleTitleChange} required />
-                <input placeholder="Introduction" type="text"  onChange={this.handleIntroChange} required />
-                <input placeholder="Description" type="text"  onChange={this.handleDescriptionChange} required />
+                <input placeholder="Title" type="text" value={this.state.Title} onChange={this.handleTitleChange} required />
+                <input placeholder="Introduction" type="text"  value={this.state.Intro} onChange={this.handleIntroChange} required />
+                <input placeholder="Description" type="text"  value={this.state.Description} onChange={this.handleDescriptionChange} required />
                 
-                <input placeholder="File" className="formBtn" type="file" onChange={this.handleFileChange} />
+                <input placeholder="File" className="formBtn" type="file"  ref={this.setRef} onChange={this.handleFileChange} />
                 <input className="formBtn" type="submit" />
             </form>
         );

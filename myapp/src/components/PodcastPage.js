@@ -31,15 +31,9 @@ export class PodcastPage extends React.Component{
             })
         }.bind(this));
             
-            for(let i=this.state.docSize; i>0; i--){
+        for(let i=this.state.docSize; i>0; i--){
             rows.push(<Podcast num={i} key={i} />)
-            }
-    
-        
-
-
-        
-        
+        }           
         
         return(
             

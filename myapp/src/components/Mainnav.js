@@ -16,8 +16,10 @@ export class Mainnav extends React.Component{
         super(props);
         this.state={
             isSignedIn: false,
-            admin: false
+            admin: false,
+            uid:false
         }
+        
     }
     
     uiConfig = {
@@ -31,34 +33,72 @@ export class Mainnav extends React.Component{
         }
     }
 
+    getUID(uid, user){
+        if(user){
+            let docRef = firebase.firestore().collection('admins').doc(uid);  
+            docRef.get().then(function(doc){
+                if(doc.exists){
+                    if(uid == doc.id && user){
+                        this.setState({
+                            uid: true,
+                            isSignedIn: !!user,
+                            admin: true
+
+                        })
+                        console.log("Successfully set state for admin - UID: " + this.state.uid);
+                        console.log(user.displayName + " is an admin");
+                        
+                    }
+                }else{
+                    this.setState({isSignedIn: !!user, admin:false})
+                    console.log("User not admin");
+                }
+            }.bind(this))
+        }else{
+            this.setState({isSignedIn: !!user,admin:false});
+            console.log("Fully logged out");
+        }
+
+    }
+    
+
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
-            
-                
-                
-            
-            
             if(user){
-                if(firebase.auth().currentUser.displayName == "Patrick Phuong"){
+                this.getUID(firebase.auth().currentUser.uid, user)      
+                /*        
+                if(this.state.uid){
+                    
                     this.setState({isSignedIn: !!user,admin:true});
                     console.log(user.displayName + " is an admin");
                 }else{
                     this.setState({isSignedIn: !!user, admin:false})
+                    console.log("User not admin");
                 }
-            } else {
-                this.setState({isSignedIn: !!user,admin:false});
-                console.log("Fully logged out");
-            }
-            
+            }*/
+            }else {
+                this.setState({isSignedIn: !!user,admin:false, uid:""});
+                console.log("Fully Logged out");
+                    
+                }
+        
         })
+    
+            
+    }  
+                
+            
+            
+            
+        
 
-    }                  
+                      
     
 
     render(){
         
         return (
-            <Router>
+            
             <Navbar expand="lg" fixed="top" style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
@@ -74,9 +114,9 @@ export class Mainnav extends React.Component{
                     <div className='row' style={{paddingLeft:'5px', paddingLeft:'5px'}}>
                       
                         <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>
-                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
-                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
                         
+                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
+                        <Link style={{paddingLeft:'10px', paddingLeft:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
                       
                     </div>
                     
@@ -88,7 +128,7 @@ export class Mainnav extends React.Component{
                             <div className='row'>
                                 <h1 style={{ color :"white", marginTop:"8px", marginRight:"10px", marginLeft:"10px", justifyContent:"center"}}>Welcome {firebase.auth().currentUser.displayName}</h1>
                                 <img
-                                    alt="profile picture"
+                                    alt=""
                                     src={firebase.auth().currentUser.photoURL}   
                                     style={{marginRight:"10px", marginLeft:"10px"}}                      
                                 />                                              
@@ -134,14 +174,8 @@ export class Mainnav extends React.Component{
                 </Navbar.Collapse>
             </Navbar>
 
-            <Route exact path='/' component={Home} />
-          
-            <Route path='/About' component={About} />            
-            <Route path='/Podcasts' component={PodcastPage}  />
-                        
-
            
-            </Router>
+            
           
         );
     }
