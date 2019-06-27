@@ -4,7 +4,7 @@ import {Nav} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import {UploadForm} from './UploadForm';
 
@@ -64,60 +64,34 @@ export class Mainnav extends React.Component{
         firebase.auth().onAuthStateChanged(user => {
             if(user){
                 this.getUID(firebase.auth().currentUser.uid, user)      
-                /*        
-                if(this.state.uid){
-                    
-                    this.setState({isSignedIn: !!user,admin:true});
-                    console.log(user.displayName + " is an admin");
-                }else{
-                    this.setState({isSignedIn: !!user, admin:false})
-                    console.log("User not admin");
-                }
-            }*/
             }else {
                 this.setState({isSignedIn: !!user,admin:false, uid:""});
-                console.log("Fully Logged out");
-                    
-                }
-        
-        })
-    
-            
-    }  
-                
-            
-            
-            
-        
-
-                      
-    
+                console.log("Fully Logged out");                   
+                }       
+        })             
+    }                                                       
 
     render(){
         
         return (
             
-            <Navbar expand="lg" fixed="top" style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
+            <Navbar expand="lg" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
                         width="40"
                         height="40"
                         className="d-inline-block align-top"
-                        alt="React Bootstrap logo"
+                        alt=""
                     />           
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className='mr-auto'>
-                    <div className='row' style={{paddingLeft:'5px', paddingRight:'5px'}}>
-                      
-                        <Link style={{paddingLeft:'10px', paddingRight:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>
-                        
-                        <Link style={{paddingLeft:'10px', paddingRight:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
-                        <Link style={{paddingLeft:'10px', paddingRight:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
-                      
+                    <div className='row'>
+                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>    
+                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
+                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
                     </div>
-                    
                 </Nav>
                     
                     {this.state.admin ?                        
@@ -142,7 +116,7 @@ export class Mainnav extends React.Component{
                         
                     this.state.isSignedIn ?  
                         (
-                            <Nav pullRight>
+                            <Nav >
                             <div className='row'>
                                 <h1 style={{ color :"white", marginTop:"8px", marginRight:"10px", marginLeft:"10px", justifyContent:"center"}}>Welcome {firebase.auth().currentUser.displayName}</h1>
                                 <img

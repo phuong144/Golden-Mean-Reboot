@@ -38,9 +38,8 @@ export class PodcastPage extends React.Component{
         return(
             <div style={{marginTop: '8rem'}}>
                 <h1 style={{justifyContent:"center", textAlign:'center'}}>Podcasts</h1>    
-                <br></br>
             
-                <div className="row" style={{justifyContent:"center", textAlign: "center", marginTop: '4rem'}}>
+                <div style={{marginTop: '3rem'}}>
                     {rows} 
                 </div>
             </div>

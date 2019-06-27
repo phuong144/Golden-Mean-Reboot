@@ -1,0 +1,35 @@
+.audio{
+    width: 100%;
+    max-width: 38rem;
+  }
+  
+  .box p{
+    margin-top:10px;
+    margin-bottom: 10px;
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+  
+  }
+  
+  .box {
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 20px;
+    padding-top:2rem;
+    margin-right: 5rem;
+    margin-left:5rem;
+    
+    text-align: center;
+    height: 28rem;
+    margin-bottom: 20px;
+    margin-top:3rem;
+    
+  }
+
+  @media scren and (max-width:640px){
+      .box{
+          height:35rem;
+      }
+  }

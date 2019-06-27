@@ -16,23 +16,22 @@ class App extends Component {
         about: false,
         podcasts: false
     }
-}
+  }
 
 
   render() {
     return (
       <Router>
-      <div className="App">         
+        <div className="App">         
           <Mainnav />  
-          <Route exact path='/' component={Home} />
-          
-          <Route path='/About' component={About} />            
-          <Route path='/Podcasts' component={PodcastPage}  />
-                                                
-      </div>
+          <Route exact path='/' component={Home} />  
+          <Route path='/Podcasts' component={PodcastPage} />
+          <Route path='/About' component={About} />                                                             
+        </div>
       </Router>
     )
   }
+  
 }
 
 export default App

@@ -1,6 +1,7 @@
 import React from 'react';
 import app from "firebase/app";
 import 'firebase/firestore';
+import './Podcast.css';
 
 
 
@@ -12,8 +13,7 @@ export class Podcast extends React.Component{
             url:"",
             intro:'',
             description:''
-        }
-        
+        }      
     }       
 
     render(){
@@ -34,8 +34,7 @@ export class Podcast extends React.Component{
                 <div className="box">
                 <h3>{this.state.title}</h3>
                 <audio
-                    src={this.state.url}
-                    
+                    src={this.state.url}                    
                     controls="controls"
                     className="audio"
                     typeof="audio/mpeg"
