@@ -10,14 +10,14 @@ export class Banner extends React.Component{
 
         const parentContainerStyles = {
             backgroundColor: 'khaki',
-            marginTop: '8rem'
+            marginTop: '5rem'
         };
 
         return (
             <div className="container-fluid about" id="about" style={parentContainerStyles}>
                 <div className="row">
                     <div className="col-sm-4 col-sm-offset-2">
-                    <img src={require("../../public/images/Logo.jpg")} className="img-responsive aboutpic" style={{width: '30em', height: '30em'}}/>
+                    <img src={require("../../public/images/Logo.jpg")} className="img-responsive aboutpic" style={{width: '30em', height: '30em', justifyContent:'center'}}/>
                     </div>
                     <div className="col-sm-5">
                     <br></br>

@@ -1,42 +1,41 @@
 import React from 'react';
-
-
+import {BrowserReact as Router, Route, Link} from 'react-router-dom';
+import './Landing.css'
 export class Landing extends React.Component{
 render(){
-    const backgroundStyle = {
-        objectFit: 'cover',
-        position: 'relative',
-        width: '100%',
-        minHeight: '100vh',
-        zIndex: "-1",
-
-    }
+    
 
     return(
         <div>
-        <div style={{
-            width: '100%',
-            minHeight: '100vh',
-            overflow: 'hidden',
-            position: 'relative',
+            <header className="v-header container">
+                <div className='fullscreen-video-wrap' style={{top:'0', left:'0', width:'100%', height:'100vh', overflow:'hidden'}}>
+                    <video 
+                        id="background-video" 
+                        loop 
+                        autoPlay 
+                        muted 
+                        
+                        
+                        src={require("../../public/images/backgroundvid.mp4")} 
+                        type="video/mp4" />                               
+                        
+                </div>
 
-        }}>
-            <video 
-                id="background-video" 
-                loop 
-                autoPlay 
-                muted 
-                style={backgroundStyle} 
-                src={require("../../public/images/backgroundvid.mp4")} 
-                type="video/mp4" />                               
-                  
-</div>  
+                <div className='header-overlay'></div>
+                <div className='header-content'>
+                        <h1 style={{color:'silver', fontWeight:'bold', fontSize:'9em', textAlign:'center'}}>The Golden Mean</h1>
+                        <h3 style={{color:'white', }}>Swan Ye Htut - Timothy Scheuermann</h3>
+                        
+                        <div className='row' style={{justifyContent:'center', textAlign:'center'}}>
+                        <a href="https://soundcloud.com/user-116024648" target="_blank"><h3 style={{color:'white'}}><u>SoundCloud</u></h3></a>
+                        &nbsp; - &nbsp;&nbsp;
+                        <Link  style={{color:'white'}} to="/Podcasts"><h3 style={{color :"white"}}><u>Podcasts</u></h3></Link>
+                        </div>
+                    
 
-<div style={{position: "absolute", justifyContent:'center', textAlign:'center', width: "100%", textShadow:"orange", top:"40%"}}>
-        <h1 style={{color:'silver', fontSize:'9em'}}>The Golden Mean</h1>
-        <h3 style={{color:'silver', }}>Swan Ye Htut - Timothy Scheuermann</h3>
-            
+                            
 
-</div>
-</div>
+                </div>
+            </header>
+        </div>
 )}}

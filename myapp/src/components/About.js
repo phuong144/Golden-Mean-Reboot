@@ -1,4 +1,6 @@
 import React from 'react';
+import {Banner} from './Banner';
+
 
 export class About extends React.Component{
     constructor(props){
@@ -12,7 +14,7 @@ export class About extends React.Component{
 
         return (
             <div id="Page3">
-            <h1 className="hosts" style={{textAlign: "center", marginTop: '8rem'}}>Meet our hosts!</h1>
+            <h1 className="hosts" style={{textAlign: "center", marginTop: '8rem', fontSize:'4rem'}}>Meet our hosts!</h1>
             <br></br>
             <div className="container" style={{justifyContent:'center', textAlign:'center'}}>
             <div className="row">
@@ -44,10 +46,12 @@ export class About extends React.Component{
                 </div>
             </div>
             </div>
+            <br></br><br></br>
             <div id="funfact">
                 <h4>Fun Fact: Timothy and Swan share the same birthday</h4>
             </div>
             </div>
+            <Banner />
             </div>
         
         );

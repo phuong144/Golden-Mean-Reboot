@@ -75,7 +75,7 @@ export class Mainnav extends React.Component{
         
         return (
             
-            <Navbar expand="lg" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
+            <Navbar expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.4)', overflow:'hidden'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
                         width="40"
