@@ -1,0 +1,20 @@
+[debug] [2019-07-02T07:50:45.994Z] ----------------------------------------------------------------------
+[debug] [2019-07-02T07:50:45.995Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-07-02T07:50:45.996Z] CLI Version:   7.0.2
+[debug] [2019-07-02T07:50:45.996Z] Platform:      linux
+[debug] [2019-07-02T07:50:45.996Z] Node Version:  v8.10.0
+[debug] [2019-07-02T07:50:45.996Z] Time:          Tue Jul 02 2019 00:50:45 GMT-0700 (PDT)
+[debug] [2019-07-02T07:50:45.996Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-02T07:50:46.003Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-02T07:50:46.003Z] > authorizing via signed-in user
+[debug] [2019-07-02T07:50:46.003Z] [iam] checking project the-golden-mean for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-07-02T07:50:46.005Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-02T07:50:46.005Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-02T07:50:46.343Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-02T07:50:46.357Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/the-golden-mean:testIamPermissions  
+
+[debug] [2019-07-02T07:50:46.684Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-02T07:50:46.689Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/the-golden-mean  
+ 

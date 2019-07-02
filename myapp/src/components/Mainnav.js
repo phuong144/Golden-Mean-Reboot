@@ -102,7 +102,9 @@ export class Mainnav extends React.Component{
                                 <img
                                     alt=""
                                     src={firebase.auth().currentUser.photoURL}   
-                                    style={{marginRight:"10px", marginLeft:"10px"}}                      
+                                    style={{marginRight:"10px", marginLeft:"10px"}}  
+                                    width="40"
+                                    height="40"                    
                                 />                                              
                                 <button style={{marginRight:"10px", marginLeft:"10px",color:'black'}} onClick={() => firebase.auth().signOut()}>Sign out!</button>
                                 
