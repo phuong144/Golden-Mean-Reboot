@@ -24,7 +24,7 @@ export class Mainnav extends React.Component{
         signInFlow: "popup",
         signInOptions: [
           firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID
         ],
         callbacks: {
           signInSuccess: () => false
@@ -75,7 +75,7 @@ export class Mainnav extends React.Component{
         
         return (
             
-            <Navbar expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.4)', overflow:'hidden'}}>
+            <Navbar expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
                         width="40"
@@ -104,9 +104,9 @@ export class Mainnav extends React.Component{
                                     src={firebase.auth().currentUser.photoURL}   
                                     style={{marginRight:"10px", marginLeft:"10px"}}                      
                                 />                                              
-                                <button style={{marginRight:"10px", marginLeft:"10px"}} onClick={() => firebase.auth().signOut()}>Sign out!</button>
+                                <button style={{marginRight:"10px", marginLeft:"10px",color:'black'}} onClick={() => firebase.auth().signOut()}>Sign out!</button>
                                 
-                                <NavDropdown title="Upload" id="basic-nav-dropdown" alignRight>
+                                <NavDropdown title="Upload" id="basic-nav-dropdown" style={{backgroundColor:'white', textAlign:'center', margin:'auto'}} alignRight>
                                     <UploadForm />
                                 </NavDropdown>
                                 
@@ -122,9 +122,11 @@ export class Mainnav extends React.Component{
                                 <img
                                     alt=""
                                     src={firebase.auth().currentUser.photoURL}  
-                                    style={{marginRight:"10px", marginLeft:"10px"}}                       
+                                    style={{marginRight:"10px", marginLeft:"10px"}}       
+                                    width="40"
+                                    height="40"                
                                 />                                              
-                                <button style={{marginRight:"10px", marginLeft:"10px"}} onClick={() => firebase.auth().signOut()}>Sign out!</button>                      
+                                <button style={{marginRight:"10px", marginLeft:"10px",color:'black',height:'40', width:'40'}} onClick={() => firebase.auth().signOut()}>Sign out!</button>                      
                     
                                 
                             </div>
@@ -132,7 +134,7 @@ export class Mainnav extends React.Component{
                         ) :
 
                         (
-                            <NavDropdown alignRight bg="transparent" title="Login" id="basic-nav-dropdown" style={{color :"white", fontSize: "2em"}}> 
+                            <NavDropdown alignRight title="Login" id="basic-nav-dropdown" style={{color :"white", fontSize: "2em"}}> 
                             <StyledFirebaseAuth
                                 uiConfig={this.uiConfig}
                                 firebaseAuth={firebase.auth()}
