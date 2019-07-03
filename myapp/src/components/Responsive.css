@@ -22,15 +22,6 @@
     .col-md-6{
         max-width:100% !important;
     }
-    .IntroPic{
-        width:50% !important;
-        display:'block';
-        margin-left:'auto';
-        margin-right:'auto';
-        border: '4px gold';
-        border-radius: '20px';
-        height: 'auto';
-    }
 }
 @media (max-width: 768px) {
   
