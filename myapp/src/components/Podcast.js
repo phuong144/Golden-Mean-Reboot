@@ -2,7 +2,7 @@ import React from 'react';
 import app from "firebase/app";
 import 'firebase/firestore';
 import './Podcast.css';
-
+import './Responsive.css';
 
 
 export class Podcast extends React.Component{
@@ -30,7 +30,7 @@ export class Podcast extends React.Component{
         }.bind(this));
             
         return (
-            <div className="col-sm-6">
+            <div className="col-md-6">
                 <div className="box">
                 <h3>{this.state.title}</h3>
                 <audio
@@ -42,7 +42,7 @@ export class Podcast extends React.Component{
                     
 
                 ></audio>
-                <p>{this.state.intro}</p>
+                <h4><b>{this.state.intro}</b></h4>
                 <p>{this.state.description}</p>
             </div>
             </div>

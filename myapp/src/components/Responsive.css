@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+
+
+
+
+
+
+
+
+
+/*---Media Queries --*/
+
+@media (min-width:992px) and (max-width:1100px){
+    .box{
+        height: 32rem !important;
+    }
+    
+}
+@media (max-width: 992px) {
+    .col-md-6{
+        max-width:100% !important;
+    }
+    .IntroPic{
+        width:50% !important;
+        display:'block';
+        margin-left:'auto';
+        margin-right:'auto';
+        border: '4px gold';
+        border-radius: '20px';
+        height: 'auto';
+    }
+}
+@media (max-width: 768px) {
+  
+}
+@media (max-width: 576px) {
+    .box{
+        height:35rem;
+        margin-right: 0rem;
+        margin-left:0rem;
+    }
+    .box p{
+        font-size: 12px;
+    }
+    .Title{
+        font-size:35px !important;
+    }
+    .Hosts{
+        font-size:15px;
+    }
+    .IntroPic{
+        width:100% !important;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        border: 4px gold;
+        border-radius: 20px;
+        height: auto;
+    }
+    .IntroDescription{
+        width:95% !important;
+        font-size:17px;
+    }
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/

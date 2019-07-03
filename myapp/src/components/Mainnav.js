@@ -84,8 +84,8 @@ export class Mainnav extends React.Component{
                         alt=""
                     />           
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor:'white'}}/>
+                <Navbar.Collapse id="basic-navbar-nav" >
                 <Nav className='mr-auto'>
                     <div className='row'>
                         <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>    

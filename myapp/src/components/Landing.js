@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserReact as Router, Route, Link} from 'react-router-dom';
 import './Landing.css'
+import './Responsive.css'
 export class Landing extends React.Component{
 render(){
     
@@ -23,8 +24,8 @@ render(){
 
                 <div className='header-overlay'></div>
                 <div className='header-content'>
-                        <h1 style={{color:'silver', fontWeight:'bold', fontSize:'9em', textAlign:'center'}}>The Golden Mean</h1>
-                        <h3 style={{color:'white', }}>Swan Ye Htut - Timothy Scheuermann</h3>
+                        <h1 className="Title"style={{color:'silver', fontWeight:'bold', fontSize:'9rem', textAlign:'center'}}>The Golden Mean</h1>
+                        <h3 className="Hosts"style={{color:'white'}}>Swan Ye Htut - Timothy Scheuermann</h3>
                         
                         <div className='row' style={{justifyContent:'center', textAlign:'center'}}>
                         <a href="https://soundcloud.com/user-116024648" target="_blank"><h3 style={{color:'white'}}><u>SoundCloud</u></h3></a>
