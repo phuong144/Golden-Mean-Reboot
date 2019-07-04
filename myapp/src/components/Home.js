@@ -23,8 +23,8 @@ export class Home extends React.Component{
                     <Intro />
                     
                     <footer className="footer" style={{backgroundColor:"grey", bottom:'0', position:'relative'}}>
-                        <div className="container-fluid" className="footerdiv">
-                            <p className="text-center" color="black">
+                        <div className="container-fluid">
+                            <p className="text-center" color="black" style={{marginTop:'10px'}}>
                                 <img className="logo" src="images/Logo.jpg" width="20" height="20" alt=""/>
                                 The Golden Mean
                             </p>

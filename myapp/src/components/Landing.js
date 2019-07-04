@@ -15,7 +15,7 @@ render(){
                         loop 
                         autoPlay 
                         muted 
-                        
+                        playsInline
                         
                         src={require("../../public/images/backgroundvid.mp4")} 
                         type="video/mp4" />                               

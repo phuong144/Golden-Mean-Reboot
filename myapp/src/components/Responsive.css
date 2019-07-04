@@ -29,11 +29,11 @@
 @media (max-width: 576px) {
     .box{
         height:35rem;
-        margin-right: 0rem;
-        margin-left:0rem;
+        margin-right: 0rem !important;
+        margin-left:0rem !important;
     }
     .box p{
-        font-size: 12px;
+        font-size: 11px !important;
     }
     .Title{
         font-size:35px !important;

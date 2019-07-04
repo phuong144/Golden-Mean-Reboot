@@ -75,7 +75,7 @@ export class Mainnav extends React.Component{
         
         return (
             
-            <Navbar expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}>
+            <Navbar expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
                 <Navbar.Brand>
                     <img src={require("../../public/images/Logo.jpg")}
                         width="40"
@@ -84,11 +84,11 @@ export class Mainnav extends React.Component{
                         alt=""
                     />           
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor:'white'}}/>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor:'silver'}}/>
                 <Navbar.Collapse id="basic-navbar-nav" >
                 <Nav className='mr-auto'>
-                    <div className='row'>
-                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>    
+                    <div className='row' style={{justifyContent:'center'}}>
+                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>   
                         <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
                         <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
                     </div>
@@ -136,7 +136,7 @@ export class Mainnav extends React.Component{
                         ) :
 
                         (
-                            <NavDropdown alignRight title="Login" id="basic-nav-dropdown" style={{color :"white", fontSize: "2em"}}> 
+                            <NavDropdown alignRight title="Login" id="basic-nav-dropdown" style={{color :"white", fontSize: "2em", justifyContent:'center'}}> 
                             <StyledFirebaseAuth
                                 uiConfig={this.uiConfig}
                                 firebaseAuth={firebase.auth()}
