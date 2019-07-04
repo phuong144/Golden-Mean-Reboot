@@ -8,6 +8,10 @@ export class About extends React.Component{
         this.state = {};
     }
 
+    handleClick(){
+        alert('Tim and Swan have the same birthday!')
+    }
+
     render(){
 
         
@@ -48,7 +52,7 @@ export class About extends React.Component{
             </div>
             <br></br><br></br>
             <div id="funfact">
-                <h4>Fun Fact: Timothy and Swan share the same birthday</h4>
+                <h4><button onClick={this.handleClick}>Fun Fact</button></h4>
             </div>
             </div>
             <Banner />
