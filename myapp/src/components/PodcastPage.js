@@ -54,14 +54,14 @@ export class PodcastPage extends React.Component{
         return(
             
 
-            <div style={{marginTop: '8rem'}}>
+            <div style={{marginTop: '8rem', textAlign:'center', justifyContent:'center', alignItems:'center'}}>
                 <h1 style={{justifyContent:"center", textAlign:'center', fontSize:'4rem'}}>Podcasts</h1>    
             
                 <div style={{marginTop: '3rem'}}>
                     {rows} 
                 </div>
-                <div style={{textAlign:'center'}}>
-                    <button onClick={this.handleClick.bind(this)} style={{margin:'auto'}} >{this.state.button}</button>
+                <div textAlign='center'>
+                    <button onClick={this.handleClick.bind(this)} style={{bottom:'0', marginLeft:'auto', marginRight:'auto'}} >{this.state.button}</button>
                 </div>
             </div>
             
