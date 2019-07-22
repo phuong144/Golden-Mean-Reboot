@@ -1,6 +1,7 @@
 import React from 'react';
 import {Intro} from './Intro';
 import {Landing} from './Landing';
+import {ScrollToTopOnMount} from './ScrollToTopOnMount';
 
 export class Home extends React.Component{
     constructor(props){
@@ -18,6 +19,7 @@ export class Home extends React.Component{
 
         return (  
             <div>
+                <ScrollToTopOnMount />
                 <Landing />
                 <div>
                     <Intro />

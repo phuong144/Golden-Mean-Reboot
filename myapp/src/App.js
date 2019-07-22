@@ -6,7 +6,6 @@ import {About} from './components/About';
 import {PodcastPage} from './components/PodcastPage';
 
 
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -22,12 +21,14 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">         
-          <Mainnav />  
-          <Route exact path='/' component={Home} />  
-          <Route path='/Podcasts' component={PodcastPage} />
-          <Route path='/About' component={About} />                                                             
-        </div>
+        
+          <div className="App">         
+            <Mainnav />  
+            <Route exact path='/' component={Home} />  
+            <Route path='/Podcasts' component={PodcastPage} />
+            <Route path='/About' component={About} />                                                             
+          </div>
+        
       </Router>
     )
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import app from "firebase/app";
 import 'firebase/firestore';
 import {Podcast} from './Podcast';
+import {ScrollToTopOnMount} from './ScrollToTopOnMount';
 
 export class PodcastPage extends React.Component{
     constructor(props){
@@ -55,6 +56,7 @@ export class PodcastPage extends React.Component{
             
 
             <div style={{marginTop: '8rem', textAlign:'center', justifyContent:'center', alignItems:'center'}}>
+                <ScrollToTopOnMount />
                 <h1 style={{justifyContent:"center", textAlign:'center', fontSize:'4rem'}}>Podcasts</h1>    
             
                 <div style={{marginTop: '3rem'}}>

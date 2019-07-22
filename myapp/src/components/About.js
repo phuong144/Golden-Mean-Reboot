@@ -1,5 +1,6 @@
 import React from 'react';
 import {Banner} from './Banner';
+import {ScrollToTopOnMount} from './ScrollToTopOnMount';
 
 
 export class About extends React.Component{
@@ -18,6 +19,7 @@ export class About extends React.Component{
 
         return (
             <div id="Page3">
+                <ScrollToTopOnMount />
                 <Banner />
 
                 <br></br><br></br>
