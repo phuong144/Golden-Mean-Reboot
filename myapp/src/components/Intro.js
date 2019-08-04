@@ -14,7 +14,7 @@ export class Intro extends React.Component{
 
         return (
         <div style={{width: '100%', position:'relative', paddingTop: '5em', paddingBottom: '5em'}}>
-          <img src={require('../../public/images/mainpic.HEIC')} alt="" className="img-rounded img-responsive IntroPic" 
+          <img src={require('../mainpic.HEIC')} alt="" className="img-rounded img-responsive IntroPic" 
           style={{
             width:'50%',
             display:'block',

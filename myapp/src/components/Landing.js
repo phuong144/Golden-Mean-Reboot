@@ -17,7 +17,7 @@ render(){
                         muted 
                         playsInline
                         
-                        src={require("../../public/images/backgroundvid.mp4")} 
+                        src={require("../backgroundvid.mp4")} 
                         type="video/mp4" />                               
                         
                 </div>

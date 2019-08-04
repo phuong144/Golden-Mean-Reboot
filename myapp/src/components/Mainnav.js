@@ -23,7 +23,6 @@ export class Mainnav extends React.Component{
     uiConfig = {
         signInFlow: "popup",
         signInOptions: [
-          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
           firebase.auth.GoogleAuthProvider.PROVIDER_ID
         ],
         callbacks: {
@@ -77,7 +76,7 @@ export class Mainnav extends React.Component{
             
             <Navbar expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
                 <Navbar.Brand>
-                    <img src={require("../../public/images/Logo.jpg")}
+                    <img src={require("../Logo.jpg")}
                         width="40"
                         height="40"
                         className="d-inline-block align-top"
