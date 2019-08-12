@@ -4,7 +4,7 @@ import {Nav} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
 
 import {UploadForm} from './UploadForm';
 
@@ -15,8 +15,11 @@ export class Mainnav extends React.Component{
         this.state={
             isSignedIn: false,
             admin: false,
-            uid:false
+            uid:false,
+            navExpanded: false
         }
+        this.setNavExpanded = this.setNavExpanded.bind(this);
+        this.closeNav = this.closeNav.bind(this);
         
     }
     
@@ -26,7 +29,7 @@ export class Mainnav extends React.Component{
           firebase.auth.GoogleAuthProvider.PROVIDER_ID
         ],
         callbacks: {
-          signInSuccess: () => false
+          signInSuccessWithAuthResult: () => window.scrollTo(0,0)
         }
     }
 
@@ -68,13 +71,27 @@ export class Mainnav extends React.Component{
                 console.log("Fully Logged out");                   
                 }       
         })             
-    }                                                       
+    }       
+    
+    scrollToTop = () => {
+        window.scrollTo(0,0);
+    }
+
+    setNavExpanded(expanded){
+        this.setState({navExpanded: expanded});
+    }
+
+    closeNav(){
+        this.setState({
+            navExpanded: false
+        })
+    }
 
     render(){
         
         return (
             
-            <Navbar expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
+            <Navbar onToggle={this.setNavExpanded} expanded={this.state.navExpanded} expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
                 <Navbar.Brand>
                     <img src={require("../Logo.jpg")}
                         width="40"
@@ -87,9 +104,9 @@ export class Mainnav extends React.Component{
                 <Navbar.Collapse id="basic-navbar-nav" >
                 <Nav className='mr-auto'>
                     <div className='row' style={{justifyContent:'center'}}>
-                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/"><h3 style={{color :"white"}}>Home</h3></Link>   
-                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/Podcasts"><h3 style={{color :"white"}}>Podcasts</h3></Link>
-                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/About"><h3 style={{color :"white"}}>About</h3></Link>
+                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/" onClick={this.scrollToTop}><h3 style={{color :"white"}}>Home</h3></Link>   
+                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/Podcasts" onClick={this.scrollToTop}><h3 style={{color :"white"}}>Podcasts</h3></Link>
+                        <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/About" onClick={this.scrollToTop}><h3 style={{color :"white"}}>About</h3></Link>
                     </div>
                 </Nav>
                     

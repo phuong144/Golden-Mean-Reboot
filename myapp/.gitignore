@@ -21,6 +21,8 @@ firebase.json
 firestore.indexes.json
 firestore.rules
 storage.rules
+.firebaserc
+database.rules.json
 .firebase
 
 #firebaseapi
