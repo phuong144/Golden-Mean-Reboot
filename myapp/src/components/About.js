@@ -24,7 +24,7 @@ export class About extends React.Component{
 
                 <br></br><br></br>
                 
-                <div id="funfact" className="container-fluid" style={{height:'40rem', backgroundImage:"url('../images/background1.jpg')", backgroundAttachment:'fixed' }}>
+                <div id="funfact" className="container-fluid" style={{height:'40rem', backgroundImage:"url('../images/background1.jpg')", backgroundAttachment:'fixed', backgroundRepeat:'no-repeat' }}>
                     
                 
                 </div>

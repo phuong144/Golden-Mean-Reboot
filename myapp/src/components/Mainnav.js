@@ -1,10 +1,10 @@
 import React from 'react';
 import {Navbar} from 'react-bootstrap';
-import {Nav} from 'react-bootstrap';
+import {Nav, NavItem} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import { BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import {UploadForm} from './UploadForm';
 
@@ -18,9 +18,10 @@ export class Mainnav extends React.Component{
             uid:false,
             navExpanded: false
         }
-        this.setNavExpanded = this.setNavExpanded.bind(this);
+       
+        this.scrollToTop = this.scrollToTop.bind(this);
         this.closeNav = this.closeNav.bind(this);
-        
+        this.setNavExpanded = this.setNavExpanded.bind(this);
     }
     
     uiConfig = {
@@ -65,9 +66,11 @@ export class Mainnav extends React.Component{
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
             if(user){
-                this.getUID(firebase.auth().currentUser.uid, user)      
+                this.getUID(firebase.auth().currentUser.uid, user)
+                window.scrollTo(0,0);
             }else {
                 this.setState({isSignedIn: !!user,admin:false, uid:""});
+                this.scrollToTop();
                 console.log("Fully Logged out");                   
                 }       
         })             
@@ -75,23 +78,22 @@ export class Mainnav extends React.Component{
     
     scrollToTop = () => {
         window.scrollTo(0,0);
+        this.setState({navExpanded:false})
     }
 
     setNavExpanded(expanded){
-        this.setState({navExpanded: expanded});
+        this.setState({navExpanded:expanded});
     }
 
-    closeNav(){
-        this.setState({
-            navExpanded: false
-        })
+    closeNav = () =>{
+        this.setState({navExpanded:false});
     }
 
     render(){
         
         return (
             
-            <Navbar onToggle={this.setNavExpanded} expanded={this.state.navExpanded} expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
+            <Navbar  onToggle={this.setNavExpanded} expanded={this.state.navExpanded} expand="md" fixed='top' style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
                 <Navbar.Brand>
                     <img src={require("../Logo.jpg")}
                         width="40"
@@ -108,6 +110,7 @@ export class Mainnav extends React.Component{
                         <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/Podcasts" onClick={this.scrollToTop}><h3 style={{color :"white"}}>Podcasts</h3></Link>
                         <Link  style={{paddingLeft:'10px', paddingRight:'10px'}} to="/About" onClick={this.scrollToTop}><h3 style={{color :"white"}}>About</h3></Link>
                     </div>
+                    
                 </Nav>
                     
                     {this.state.admin ?                        
