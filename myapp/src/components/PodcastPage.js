@@ -55,7 +55,7 @@ export class PodcastPage extends React.Component{
         return(
             
 
-            <div style={{marginTop: '8rem', textAlign:'center', justifyContent:'center', alignItems:'center'}}>
+            <div style={{paddingTop: '8rem', textAlign:'center', justifyContent:'center', alignItems:'center', backgroundColor:'silver'}}>
                 <ScrollToTopOnMount />
                 <h1 style={{justifyContent:"center", textAlign:'center', fontSize:'4rem'}}>Podcasts</h1>    
             

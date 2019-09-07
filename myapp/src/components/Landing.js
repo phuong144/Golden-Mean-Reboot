@@ -17,14 +17,14 @@ render(){
                         muted 
                         playsInline
                         
-                        src={require("../backgroundvid.mp4")} 
+                        src={require("../backvid.mp4")} 
                         type="video/mp4" />                               
                         
                 </div>
 
                 <div className='header-overlay'></div>
                 <div className='header-content'>
-                        <h1 className="Title"style={{color:'silver', fontWeight:'bold', fontSize:'9rem', textAlign:'center'}}>The Golden Mean</h1>
+                        <h1 className="Title"style={{color:'white', fontWeight:'bold', fontSize:'9rem', textAlign:'center'}}>The Golden Mean</h1>
                         <h3 className="Hosts"style={{color:'white'}}>Swan Ye Htut - Timothy Scheuermann</h3>
                         
                         <div className='row' style={{justifyContent:'center', textAlign:'center'}}>

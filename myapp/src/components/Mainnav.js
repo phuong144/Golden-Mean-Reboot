@@ -66,7 +66,7 @@ export class Mainnav extends React.Component{
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(user => {
             if(user){
-                this.getUID(firebase.auth().currentUser.uid, user)
+                this.getUID(firebase.auth().currentUser.uid, user);
                 window.scrollTo(0,0);
             }else {
                 this.setState({isSignedIn: !!user,admin:false, uid:""});
