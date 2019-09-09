@@ -13,6 +13,7 @@ export class PodcastPage extends React.Component{
             button:'Show More',
             docSize: 0,
             docDisplay:0,
+            isOdd:false,
         }
         
         this.handleClick = this.handleClick.bind(this);
@@ -52,19 +53,25 @@ export class PodcastPage extends React.Component{
             rows.push(<Podcast num={i} key={i} />)
         }           
         
+        
         return(
             
-
-            <div style={{paddingTop: '8rem', textAlign:'center', justifyContent:'center', alignItems:'center', backgroundColor:'silver'}}>
-                <ScrollToTopOnMount />
-                <h1 style={{justifyContent:"center", textAlign:'center', fontSize:'4rem'}}>Podcasts</h1>    
             
-                <div style={{marginTop: '3rem'}}>
-                    {rows} 
+            <div style={{paddingTop: '8rem', backgroundColor:"silver", overflow:'hidden'}}>
+                <ScrollToTopOnMount />
+                
+                <div style={{backgroundColor:'silver'}}>
+                    <h1 style={{justifyContent:"center", textAlign:'center', fontSize:'4rem'}}>Podcasts</h1>    
+            
+                    <div style={{marginTop: '3rem'}}>
+                        {rows} 
+                    </div>
+
+                    <div className="col-md-12" style={{textAlign:'center'}}>
+                        <button onClick={this.handleClick.bind(this)} style={{bottom:'0'}} >{this.state.button}</button>
+                    </div>
                 </div>
-                <div textAlign='center'>
-                    <button onClick={this.handleClick.bind(this)} style={{bottom:'0', marginLeft:'auto', marginRight:'auto'}} >{this.state.button}</button>
-                </div>
+                
             </div>
             
 
