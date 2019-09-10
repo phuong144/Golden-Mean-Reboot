@@ -35,7 +35,7 @@ export class Podcast extends React.Component{
                 <h3>{this.state.title}</h3>
                 <audio
                     src={this.state.url}                    
-                    controls="controls"
+                    controls="true"
                     className="audio"
                     typeof="audio/mpeg"
                     preload="none"
