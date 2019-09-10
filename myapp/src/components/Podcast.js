@@ -44,6 +44,7 @@ export class Podcast extends React.Component{
                 ></audio>
                 <h4><b>{this.state.intro}</b></h4>
                 <p>{this.state.description}</p>
+                <a href={this.state.url} download>DL</a>
             </div>
             </div>
         );                                    
