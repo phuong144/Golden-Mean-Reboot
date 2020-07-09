@@ -1,9 +1,10 @@
 #outernav{
     position: absolute;
-    width: 1964px;
+    width:1980px;
     height: 107px;
-    left: -22px;
+    
     top: 0px;
+    right:0px;
 
     
 }

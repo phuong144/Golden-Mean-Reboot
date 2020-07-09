@@ -10,7 +10,9 @@ export class Navbar extends React.Component{
             isSignedIn: false,
             admin: false,
             uid:false,
-            navExpanded: false
+            navExpanded: false,
+            color:this.props.color,
+            id:this.props.id,
         }
        
         
@@ -82,24 +84,43 @@ export class Navbar extends React.Component{
     }
     */
     render(){
+        if(this.state.color == "black"){
+            if(this.state.id == "Ep"){
+
+            
+                return (
+                    <div id="outernav" style={{background: "#2D2F3E"}}>
+                        <div id="innernav">
+                            <p><Link id="n0" to="/">HOME</Link></p>
+                            <p><Link id="n1" to="/Episodes" style={{color:"#E6BB5C"}}>EPISODES</Link></p>
+                            <p><Link id="n2">ABOUT</Link></p>
+                            <p><Link id="n3">SUBSCRIBE</Link></p>
+                            
         
-        return (
-            <div id="outernav">
-                <div id="innernav">
-                    <p><Link id="n0" to="/">HOME</Link></p>
-                    <p><Link id="n1" to="/Episodes">EPISODES</Link></p>
-                    <p><Link id="n2">ABOUT</Link></p>
-                    <p><Link id="n3">SUBSCRIBE</Link></p>
-                    
+                        </div>
+        
+                    </div>
+                
+                );
+            }
+        }else{
+
+        
+            return (
+                <div id="outernav">
+                    <div id="innernav">
+                        <p><Link id="n0" to="/">HOME</Link></p>
+                        <p><Link id="n1" to="/Episodes">EPISODES</Link></p>
+                        <p><Link id="n2">ABOUT</Link></p>
+                        <p><Link id="n3">SUBSCRIBE</Link></p>
+                        
+
+                    </div>
 
                 </div>
 
-            </div>
-            
-           
-            
-          
-        );
+            );
+        }
     }
 
 }

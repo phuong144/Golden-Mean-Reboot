@@ -41,7 +41,9 @@ export class Homepage extends React.Component{
     render(){
         return (
             <div id="homepage">
-                <div id="background"></div>
+                <div id="background">
+                    <img id="background-img" src={require("./css/Background.png")}></img>
+                </div>
                 <Navbar />
                 <Intro />
                 <LatestEp title={this.state.title + ": "+this.state.intro} description={this.state.description} url={this.state.url}/>
@@ -75,7 +77,7 @@ function LatestEp(props){
             
 
             
-            <p id="title">{props.title}</p>
+            <p id="htitle">{props.title}</p>
             
             <p id="description">{props.description}</p>
             <audio

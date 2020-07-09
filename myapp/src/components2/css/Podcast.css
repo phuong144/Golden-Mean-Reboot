@@ -1,0 +1,150 @@
+#Episodes{
+   
+}
+
+#right{
+    margin-left: 230px;
+}
+
+#rows{
+
+   margin-top:300px;
+   
+}
+#title{
+    position: absolute;
+    width: 100%;
+    height: 95px;
+    
+    top: 143px;
+
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 1px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #000000;
+
+}
+#Podnum{
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    
+
+    background: #E6BB5C;
+}
+
+#Podnum p{
+ 
+    
+    height: 135px;
+    left: 143px;
+    top: 291px;
+    
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 86px;
+    line-height: 35px;
+    text-align: center;
+    
+    color: #2D2F3E;
+    
+}
+#podcast {
+    
+    width: 80%;
+    height: 220px;
+    left: 143px;
+    top: 265px;
+
+    background: #E5E5E5;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#Intro{
+
+    width: 100%;
+    height: 15px;
+    left: 379px;
+    top: 276px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    padding-top:10px;
+    color: #2D2F3E;
+    margin:0;
+}
+
+#Description {
+    width: 100%;
+    height: 100px;
+    left: 379px;
+    top: 314px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+
+    color: #000000;
+
+}
+
+#Audio{
+   
+    width: 100%;
+    height: 45.29px;
+    left: 378px;
+    top: 401px;
+    
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+}
+
+#Loadmore{
+    
+    
+    margin-top:20px;
+    border: 1px solid #2D2F3E;
+    box-sizing: border-box;
+    text-align: center;
+   
+    position:absolute;
+    left:50%;
+ 
+    
+  
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+    
+    
+}
+
+#Loadmore p{
+    
+    height: 50px;
+    
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 15px;
+    text-align: center;
+    
+    color: #2D2F3E;
+    
+}
