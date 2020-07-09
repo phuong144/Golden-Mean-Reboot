@@ -1,0 +1,212 @@
+#homepage{
+    position: relative;
+    max-width:1980px;
+    
+    width:100%;
+    height: 2320px;
+
+    background: #9E3A1F;
+    
+}
+
+#background {
+    position: absolute;
+    width: 100%;
+    height: 2170.5px;
+    left: -7px;
+    top: 0px;
+    background-image: url("./Background.png");
+}
+
+.footer {
+    position: absolute;
+    width: 1920px;
+    height: 165px;
+    left: 0px;
+    top: 2160px;
+    background: #DADADA;
+}
+
+
+#f1 {
+    
+   
+    height: 18px;
+    left: 926px;
+    top: 2188px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    
+
+    text-align: center;
+
+    color: #000000;
+}
+
+#f2 {
+    
+    
+    height: 16px;
+    left: 878px;
+    top: 2219px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+#f3 {
+    
+    
+    height: 36px;
+    left: 824px;
+    top: 2248px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+}
+
+#fimg { 
+    width: 24px;
+    height: 24px;
+    left: 890px;
+}
+#Intro{
+    
+    width: 709px;
+    height: 481px;
+    left: 60px;
+    top: 171px;
+
+}
+#I1{
+    position: absolute;
+    width: 709px;
+    height: 222px;
+    left: 60px;
+    top: 171px;
+
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+
+    color: #E6BB5C;
+}
+
+#I2{
+    position: absolute;
+    width: 556px;
+    height: 321px;
+    left: 60px;
+    top: 331px;
+
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    /* or 146% */
+
+
+    color: #FFFFFF;
+
+}
+
+
+#Ep{
+    
+    position: absolute;
+    width: 1014px;
+    height: 442px;
+    left: 770px;
+    top: 1341px;
+
+}
+
+#playbutton{
+    width: 80px;
+    height: 80px;
+    left: 770px;
+    top: 1341px;
+  
+}
+
+#title{
+    width: 822px;
+    height: 89px;
+    left: 860px;
+    top: 1343px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #E6BB5C;
+  
+}
+
+#description{
+    width: 925px;
+    
+    left: 859px;
+    top: 1399px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    
+    color: #FFFFFF;
+}
+#audio{
+    width: 903px;
+    height: 66px;
+    left: 859px;
+    top: 1622px;
+    
+}
+
+#AllEp{
+    position:absolute;
+    
+    height: 60px;
+    left: 860px;
+    top: 1950px;
+    
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+#AllEp p{
+    margin-top:12px;
+    width: 175px;
+    height: 50px;
+    left: calc(50% - 175px/2 - 0.5px);
+    top: calc(50% - 50px/2 + 730px);
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
