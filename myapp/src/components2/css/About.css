@@ -1,0 +1,30 @@
+body{
+    margin:0;
+    
+    overflow-x: hidden;
+}
+
+#About{
+    top:0;
+    height: 125vh;
+    display:flex;
+    max-width:1980px;
+    overflow:hidden;
+    margin:auto;
+    
+   
+
+
+}
+#background-img{
+   
+    top:0;
+    left:0;
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    
+    background-attachment:fixed;
+
+
+}
