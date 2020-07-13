@@ -1,21 +1,31 @@
-#outernav{
-    position: absolute;
-    width:1980px;
-    height: 107px;
-    
-    top: 0px;
-    right:0px;
+
+@media (max-width: 576px) {
+    #outernav{
+        height:290px !important;
+    }
+
+    #innernav{
+        float:left !important;
+
+    }
+    #innernav p {
+        display:block !important;
+     
+    }
 
     
+
+}
+
+#outernav{
+    height: 107px;    
 }
 
 #innernav{
-    position: absolute;
-   
-    width: 517px;
-    height: 58px;
-    left: 1363px;
-    top: 35px;
+    float:right;
+    margin-top:35px;
+    margin-right:80px;
+ 
 }
 #innernav p {
     display:inline;

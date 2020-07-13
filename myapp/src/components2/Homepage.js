@@ -142,7 +142,7 @@ function Footer(props) {
 
 function Intro(props){
     return(
-        <div id="Intro">
+        <div id="HIntro">
             <p id="I1">Welcome to the <br></br>Golden Mean Podcast <br></br>hosted by Timothy and Swan!</p>
             <p id="I2"><br></br>These podcasts will feature wide-ranging conversations about sports, politics, philosophy, and life in general. We discuss challenging topics but the goal is always to have fun doing it while sharing our perspectives!</p>
         </div>

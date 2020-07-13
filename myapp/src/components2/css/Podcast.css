@@ -8,15 +8,13 @@
 
 #rows{
 
-   margin-top:300px;
+   margin-top:80px;
    
 }
 #title{
-    position: absolute;
-    width: 100%;
-    height: 95px;
     
-    top: 143px;
+    width: 100%;
+ 
 
     font-family: Oswald;
     font-style: normal;
