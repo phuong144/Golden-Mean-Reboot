@@ -1,0 +1,76 @@
+@media (max-width: 576px) {
+    #findus{
+        width: 50%;
+        margin: auto;
+        margin-bottom:25px;
+    }
+    #logolinks{
+        margin-top: -30px !important;
+    }
+    .media{
+        margin:10px !important;
+    }
+    #find{
+        
+    }
+}
+
+#social{
+    margin-top: 25px;
+}
+
+#findus{
+    
+    text-align: center;
+
+}
+#find{
+    
+    width: 175px;
+    height: 50px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+}
+.frow{
+    display:inline-block;
+}
+#hr1{
+   
+    width: 120px;
+    height: 0px;
+   
+
+    border-top: 1px solid #E6BB5C;
+}
+#hr2{
+   
+    width: 120px;
+    height: 0px;
+ 
+
+    border-top: 1px solid #E6BB5C;
+}
+
+#logolinks{
+    display:inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: -50px;
+}
+.media{
+    
+  
+    margin:50px;
+}
+
+.media p{
+    display:block !important;
+}

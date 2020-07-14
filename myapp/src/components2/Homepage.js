@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/Homepage.css';
 import {Navbar} from "./Navbar";
+import {SocialMedia} from "./SocialMedia";
 import app from "firebase/app";
 import 'firebase/firestore';
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
@@ -48,7 +49,7 @@ export class Homepage extends React.Component{
                 <Intro />
                 <LatestEp title={this.state.title + ": "+this.state.intro} description={this.state.description} url={this.state.url}/>
                 <AllEp />
-                
+                <SocialMedia />
                 </div>
                 <Footer />       
             </div>     
@@ -57,32 +58,11 @@ export class Homepage extends React.Component{
 
 }
 
-function SocialMedia(props){
-    return(
-        <div id="social">
-            <div id="findus">
-                <hr className="hr1"></hr>
-                <p id="find">FIND US ON</p>
-                <hr className="hr2"></hr>
-            </div>
-            <div id="logolinks">
-                <div className="box"><a target="_blank" href="https://podcasts.apple.com/us/podcast/the-golden-mean-podcast/id1506294853?fbclid=IwAR1oBJDXgJ3awmwvYlF9urCjlMO9uSXRuGAmDqiinYJ02ZsZkMk-NqeNu40"><img id="itunes" src={require("./css/itunes.png")}></img><p>iTunes</p></a></div>
-                
-                <div className="box"><a target="_blank" href="https://soundcloud.com/user-116024648"><img id="soundcloud" src={require("./css/soundcloud.png")}></img><p>Soundcloud</p></a></div>
-                
-                <div className="box"><a target="_blank" href="https://www.google.com/"><img id="stitcher" src={require("./css/stitcher.png")}></img><p>Stitcher</p></a></div>
-                
-                <div className="box"><a target="_blank" href="https://open.spotify.com/show/2o4i9OCFtPNexR2yxiDUHw?si=JTeSEd7SRBOXqV4sh_j2dA"><img id="spotify" src={require("./css/spotify.png")}></img><p>Spotify</p></a></div>
-                
-            </div>
-        </div>
-    );
-}
 
 function AllEp(props){
     return(
         <div id="AllEp">
-            <p><Link id="n1" to="/Episodes">ALL EPISODES</Link></p>
+            <p><Link id="a1" to="/Episodes">ALL EPISODES</Link></p>
         </div>
     );
 }
@@ -97,7 +77,7 @@ function LatestEp(props){
             <input onClick={() =>{
                 let x = document.getElementById("audio");
                 x.play();
-            }} id="playbutton" type="image" src={require("./css/playcircle.png")} />
+            }} id="playbutton" type="image" src={require("./images/playcircle.png")} />
             
 
             
@@ -124,7 +104,7 @@ function Footer(props) {
         <div className="footer">
                 
                 <p id="f1">
-                <img id="fimg" src={require("./css/Logo.jpg")}/>
+                <img id="fimg" src={require("./images/Logo.jpg")}/>
                     The Golden Mean
                 </p>
                 

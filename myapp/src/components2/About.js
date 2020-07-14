@@ -19,7 +19,7 @@ export class About extends React.Component{
         return (
             <div id="About">
                 <Navbar color="black" id="About"/>
-                <img id="background-img" src={require("./css/About.png")}></img>
+                <img id="background-img" src={require("./images/About.png")}></img>
             
             </div>
         

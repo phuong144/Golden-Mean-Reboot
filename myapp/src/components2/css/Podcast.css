@@ -1,9 +1,24 @@
+@media (max-width: 576px) {
+    #Podnum{
+        width: 40% !important;
+    }
+    #right{
+        margin-left:170px !important;
+    }
+    #Description{
+        display:none !important;
+    }
+    #Audio{
+        margin-top: 130px !important;
+    }
+}
+
 #Episodes{
    
 }
 
 #right{
-    margin-left: 230px;
+    margin-left: 240px;
 }
 
 #rows{
@@ -13,7 +28,7 @@
 }
 #title{
     
-    width: 100%;
+    width: 95%;
  
 
     font-family: Oswald;
@@ -57,7 +72,7 @@
 }
 #podcast {
     
-    width: 80%;
+    width: 85%;
     height: 220px;
     left: 143px;
     top: 265px;
@@ -69,7 +84,7 @@
 
 #Intro{
 
-    width: 100%;
+    width: 98%;
     height: 15px;
     left: 379px;
     top: 276px;
@@ -85,7 +100,7 @@
 }
 
 #Description {
-    width: 100%;
+    width: 98%;
     height: 100px;
     left: 379px;
     top: 314px;
@@ -102,7 +117,7 @@
 
 #Audio{
    
-    width: 100%;
+    width: 95%;
     height: 45.29px;
     left: 378px;
     top: 401px;
