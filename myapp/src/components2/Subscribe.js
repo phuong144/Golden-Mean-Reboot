@@ -5,10 +5,17 @@ import {Navbar} from "./Navbar";
 export class Subscribe extends React.Component{
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+            email:"",
+            pass:"",
+        };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     
+    handleClick(){
+        alert("Signed Up!");
+    }
 
     render(){
 
@@ -56,8 +63,8 @@ export class Subscribe extends React.Component{
                     <div id="sfright"> 
                         <p>Get updated when a new episode comes out!</p>
                         <div>
-                            <input value="Email Address" type="text" id="lname" name="Sign Up" />
-                            <button>Sign Up</button>
+                            <input value="Email Address" type="text" id="emailaddress" name="Sign Up" />
+                            <button onClick={this.handleClick}>Sign Up</button>
                         </div>
                     </div>
                 </div>

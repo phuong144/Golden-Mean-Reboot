@@ -67,7 +67,7 @@ body{
 
 #About{
     
-    height: 136vh;
+    height: 1312px;
 
     max-width:1980px;
     overflow:hidden;
@@ -80,7 +80,7 @@ body{
 #AboutBackground{
    
     width:100%;
-    height: 136vh;
+    height: 1312px;
     overflow:hidden;
     background-color: white;
     background-image: url("../images/Poly1.png");

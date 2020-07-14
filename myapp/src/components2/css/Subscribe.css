@@ -1,3 +1,48 @@
+@media (max-width: 576px){
+    #Subscribe{
+        height:1800px !important;
+    }
+    #SubscribeBackground{
+        height:1200px !important;
+    }
+    #SubscribeTitle{
+        font-size:40px !important;
+        
+    }
+
+    #platformbox{
+        background:none !important;
+        display:inline-block !important;
+        width:100% !important;
+    }
+
+    #platformbox img{
+        margin-left: auto;
+        display: block !important;
+        margin-right: auto;
+        
+        width: 30% !important;
+    }
+
+    #subscribefooter{
+        height:auto !important;
+        display:block !important;
+    }
+    #sfleft{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        justify-content: center;
+    }
+    #sfright{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
 #Subscribe{
     height: 1080px;
 }
