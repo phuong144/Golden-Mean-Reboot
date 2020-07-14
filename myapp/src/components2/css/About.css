@@ -5,9 +5,9 @@ body{
 }
 
 #About{
-    top:0;
-    height: 125vh;
-    display:flex;
+    
+    height: 136vh;
+
     max-width:1980px;
     overflow:hidden;
     margin:auto;
@@ -16,15 +16,182 @@ body{
 
 
 }
-#background-img{
+#AboutBackground{
    
-    top:0;
-    left:0;
     width:100%;
-    height:auto;
+    height: 136vh;
     overflow:hidden;
+    background-color: white;
+    background-image: url("../images/Poly1.png");
+    background-repeat:no-repeat;
+
+    background-position: bottom;
+
+
+}
+
+#section1{
+    height:500px;
+    background-color:#F2F2F2;
+    display:inline-flex;
+}
+
+#AboutSection{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 160px;
+}
+
+#AboutLogo{
+   
+    width: 421px;
+    height: 420px;
+    margin-left: 92px;
+    margin-top: 146px;
+}
+
+#AboutTitle{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+}
+
+#AboutDescription{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+#credits{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #9E3A1F;
+}
+
+#findus{
     
-    background-attachment:fixed;
+    text-align: center;
 
+}
+#Aboutfind{
+    
+    width: 281px;
+    height: 50px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    /* identical to box height */
+    margin-left:20px;
+    margin-right:20px;
 
+    text-align: center;
+
+    color: black;
+
+}
+.frow{
+    display:inline-block;
+}
+#ahr1{
+   
+    width: 120px;
+    height: 0px;
+   
+
+    border-top: 1px solid black;
+}
+#ahr2{
+   
+    width: 120px;
+    height: 0px;
+ 
+
+    border-top: 1px solid black;
+}
+
+#hosts{
+    display: flex;
+
+    margin: auto;
+    justify-content: center;
+}
+
+.hostdescription{
+    width: 575px;
+    height: 220px;
+    margin-left:0;
+    margin-top:40px;
+
+    background: #2D2F3E;
+}
+
+.hostSection{
+    display: inline-flex;
+    width: 50%;
+   
+}
+
+.hostname{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+    width:300px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+#swanname{
+    margin-left:200px;
+}
+#timname{
+    margin-right:200px;
+}
+
+.hostp{
+    width:90%;
+    height: 258px;
+    left: 44px;
+    top: 831px;
+    margin-left:30px;
+    font-family: "Open Sans" sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+
+}
+#tim{
+}
+#swan{
+   
+    
+}
+
+.email{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #E6BB5C;
+    
 }
