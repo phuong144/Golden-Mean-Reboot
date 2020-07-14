@@ -44,20 +44,22 @@ body{
     overflow:hidden;
     background-color: #9E3A1F;
     background-image: url("../images/Background.png");
-    background-repeat:no-repeat;
+    background-repeat:round;
     background-size:cover;
-    background-position: center center;
+    background-position: initial;
 }
 
-#hbackground-img{
+
+
+#hlogo{
+    width: 50%;
+    height: auto;
+    margin-right: auto;
+    margin-top: 200px;
     
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow:hidden;
-    background-attachment: fixed;
-    background-repeat:no-repeat;
-    background-size: cover; 
+    margin-left: auto;
+   
+    
 }
 
 .footer {
@@ -74,16 +76,15 @@ body{
     
    
     height: 18px;
-    left: 926px;
-    top: 2188px;
+    
 
-    font-family: Open Sans;
+    font-family: "Open Sans" sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 18px;
-    
-
+    margin-bottom: 20px;
+    margin-top: 21px;
     text-align: center;
 
     color: #000000;
@@ -124,7 +125,7 @@ body{
 #fimg { 
     width: 24px;
     height: 24px;
-    left: 890px;
+    margin-right: 10px;
 }
 #HIntro{
     
@@ -136,12 +137,27 @@ body{
 
 }
 
+#HIntro1{
+    display: flex;
+}
+
 @media (max-width: 576px) {
+
+    #HIntro1{
+        display:block !important;
+    }
     #HIntro{
         margin: auto;
         width: 90%;
         text-align: center;
-        height: 630px;
+        height: 550px;
+    }
+    
+    #hlogo{
+        display:block !important;
+        width: 60% !important;
+        margin-bottom:30px;
+        margin-top:0px !important;
     }
     #I1{
         font-size: 30px !important;
@@ -163,6 +179,7 @@ body{
         float: none !important;
         margin-top: 0 !important;
         padding-bottom: 20px !important;
+        margin-right: auto !important;
     }
     
     #playbutton{
@@ -238,10 +255,14 @@ body{
 
 #Ep{
     
-    width: 1014px;    
+
+    margin-right: 10px;
+    width: 55%;
     margin-top: 200px;
-    float:right;
-    padding-bottom:60px;
+    float: right;
+   
+    padding-bottom: 60px;
+    
 }
 
 #playbutton{
@@ -263,8 +284,8 @@ body{
 }
 
 #description{
-    width: 925px;    
-    font-family: Open Sans;
+    width: auto;   
+    font-family: "Open Sans" sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -273,7 +294,7 @@ body{
     color: #FFFFFF;
 }
 #audio{
-    width: 903px;
+    width: 95%;
     margin-top:20px;
     
 }

@@ -1,20 +1,82 @@
 import React from 'react';
 import './css/Subscribe.css';
 import {Navbar} from "./Navbar";
+import app from "firebase/app";
+import 'firebase/firestore';
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import {UploadForm} from '../components/UploadForm';
+import {Container} from './UploadForm/Container';
 
 export class Subscribe extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            email:"",
+            email:"Gmail Address",
             pass:"",
+            admin:false,
+            isSignedIn:false,
         };
         this.handleClick = this.handleClick.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
+    uiConfig = {
+        signInFlow: "popup",
+        signInOptions: [
+          app.auth.GoogleAuthProvider.PROVIDER_ID
+        ],
+        callbacks: {
+          signInSuccessWithAuthResult: () => window.scrollTo(0,0)
+        }
+    }
+    componentDidMount = () => {
+        app.auth().onAuthStateChanged(user => {
+            if(user){
+                this.setState({
+                    isSignedIn:true,
+                })
+            }else {
+                this.setState({
+                    isSignedIn:false,
+                })
+            }
+        })             
+    }       
     
-    handleClick(){
-        alert("Signed Up!");
+    handleClick(e){
+
+        
+       
+        let email = app.firestore().collection("MailingList2").doc(this.state.email);
+
+        if(email.id == "timothyscheuermann@gmail.com" || email.id == "swanyehtut@g.ucla.edu" || email.id == "pat@test.com"){
+            console.log("admin");
+            this.setState({admin:true})
+        }else{
+            email.get().then(function(doc){
+                if(!doc.exists){
+                    email.set({
+                        subscribed:true,
+                    })
+                }
+            }.bind(this))
+            //alert("Signed Up!");
+            
+        }
+        e.preventDefault();
+       
+        
+    }
+    handleInputChange(event) {
+       
+        
+        let value = event.target.value;
+        this.setState({
+            email:value,
+        })
+       
+        
+       
     }
 
     render(){
@@ -60,12 +122,33 @@ export class Subscribe extends React.Component{
                             <a>Instagram</a>
                         </div>
                     </div>
+                    {this.state.admin ? 
+
+                            
+                                this.state.isSignedIn? 
+
+                                (
+                                    <Container />
+                                )
+                                :
+                                (<StyledFirebaseAuth
+                                    uiConfig={this.uiConfig}
+                                    firebaseAuth={app.auth()}
+                                />) 
+                                
+                            
+
+                            
+                            : 
+                            
+                            (<div></div>)
+                    }
                     <div id="sfright"> 
                         <p>Get updated when a new episode comes out!</p>
-                        <div>
-                            <input value="Email Address" type="text" id="emailaddress" name="Sign Up" />
-                            <button onClick={this.handleClick}>Sign Up</button>
-                        </div>
+                        <form>
+                            <input onChange={this.handleInputChange} value={this.state.email} type="text" id="gmail" name="email" />
+                            <input id="submit" type="submit" value="Sign Up" onClick={this.handleClick} />
+                        </form>
                     </div>
                 </div>
             

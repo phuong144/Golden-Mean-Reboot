@@ -51,13 +51,13 @@ exports.sendMail = functions.firestore
       // perform desired operations ...  
 
     var db = firebase.firestore();
-    db.collection("MailingList").get().then(function(querySnapshot) {
+    db.collection("MailingList2").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
             //console.log(doc.id, " => ", doc.data());
             //doc.email, doc.displayName, doc.uid
 
-            const dest = doc.data().email;
+            const dest = doc.id;
 
             const mailOptions = {
                 from: 'The Golden Mean <goldenmeants@gmail.com>', // Something like: Jane Doe <janedoe@gmail.com>

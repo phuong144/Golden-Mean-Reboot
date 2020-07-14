@@ -47,6 +47,7 @@ export class Homepage extends React.Component{
                 
                 <Navbar />
                 <Intro />
+                
                 <LatestEp title={this.state.title + ": "+this.state.intro} description={this.state.description} url={this.state.url}/>
                 <AllEp />
                 <SocialMedia />
@@ -57,7 +58,6 @@ export class Homepage extends React.Component{
     }
 
 }
-
 
 function AllEp(props){
     return(
@@ -122,9 +122,14 @@ function Footer(props) {
 
 function Intro(props){
     return(
+        <div id="HIntro1">
+
+        
         <div id="HIntro">
             <p id="I1">Welcome to the <br></br>Golden Mean Podcast <br></br>hosted by Timothy and Swan!</p>
             <p id="I2"><br></br>These podcasts will feature wide-ranging conversations about sports, politics, philosophy, and life in general. We discuss challenging topics but the goal is always to have fun doing it while sharing our perspectives!</p>
+        </div>
+        <img id="hlogo" src={require("./images/Logo.jpg")}/>
         </div>
     )
 }
