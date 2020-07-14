@@ -160,6 +160,7 @@ body{
         text-align: center;
         float: none !important;
         margin-top: 0 !important;
+        padding-bottom: 20px !important;
     }
     
     #playbutton{
@@ -170,16 +171,28 @@ body{
     
     #htitle{
         width: auto !important;
-       
+        font-size: 25px !important;
       
     }
     
     #description{
         width: auto !important;
+        font-size: 18px !important;
     }
     #audio{
         width: 90% !important;
         
+    }
+
+    #AllEp{
+        width: 40% !important;
+    
+    
+    }
+    
+    #AllEp p{
+        height: 40px !important;
+        margin-top: 0 !important;
     }
 
 

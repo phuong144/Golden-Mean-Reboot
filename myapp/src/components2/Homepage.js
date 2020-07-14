@@ -48,7 +48,7 @@ export class Homepage extends React.Component{
                 <Intro />
                 <LatestEp title={this.state.title + ": "+this.state.intro} description={this.state.description} url={this.state.url}/>
                 <AllEp />
-                <SocialMedia />
+                
                 </div>
                 <Footer />       
             </div>     
