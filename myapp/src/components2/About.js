@@ -25,6 +25,7 @@ export class About extends React.Component{
                 <AboutSummary />
                 <Meet />
                 <Hosts />
+                <p id="funfact">Fun fact: Timothy and Swan share the same birthday!</p>
                 </div>
             
             </div>
@@ -68,16 +69,16 @@ function Hosts(props){
                 </div>
                
 
-                <div>
+                <div className="picemail">
                 <img id="swanpic" src={require("./images/Swan.png")}/>
-                <p className="email" >swanyehtut91920@gmail.com</p>
+                <p className="email" ><a href="mailto:swanyehtut91920@gmail.com">swanyehtut91920@gmail.com</a></p>
                 </div>
                 
             </div>
             <div id="tim" className="hostSection">
-                <div>
+                <div className="picemail">
                     <img id="timpic" src={require("./images/Tim.png")}/>
-                    <p className="email" >timothyscheuermann@gmail.com</p>
+                    <p className="email"><a href="mailto:timothyscheuermann@gmail.com">timothyscheuermann@gmail.com</a></p>
                 </div>
                 
  

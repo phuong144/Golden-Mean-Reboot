@@ -4,6 +4,67 @@ body{
     overflow-x: hidden;
 }
 
+@media (max-width: 576px) {
+    #AboutBackground{
+        height: auto !important;
+        background-image:none !important;
+    }
+    #About{
+        height:2500px !important;
+    }
+
+    #section1{
+        display:block !important;
+        height:800px !important;
+    }
+    #AboutLogo{
+        margin-right: auto;
+        height: auto !important;
+        margin-left: auto !important;
+        display: block;
+        width: 50% !important;
+        margin-top:0 !important;
+    }
+    #AboutSection{
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        text-align: center;
+        margin-top:0 !important;
+    }
+
+    #hosts{
+        display:block !important;
+    }
+    .hostSection{
+        display:block !important;
+        width:100% !important;
+    }
+
+    .hostdescription{
+        margin-top:0 !important;
+        width:100% !important;
+
+    }
+
+    #swanname{
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+    .hostname{
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .picemail img{
+        display: block !important;
+        margin-left: auto;
+        margin-right:auto;
+        width:70%;
+    }
+
+}
+
 #About{
     
     height: 136vh;
@@ -193,5 +254,23 @@ body{
     text-align: center;
     
     color: #E6BB5C;
+    
+}
+
+.email a{
+    text-decoration: none !important;
+    color: #E6BB5C;
+    
+}
+
+#funfact{
+    font-family: "Open Sans" sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    
+    color: #FFFFFF;
     
 }
