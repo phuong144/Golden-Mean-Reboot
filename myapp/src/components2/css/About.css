@@ -184,12 +184,12 @@ body{
     display: flex;
 
     margin: auto;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .hostdescription{
-    width: 575px;
-    height: 220px;
+    width: 480px;
+    height: 230px;
     margin-left:0;
     margin-top:40px;
 
@@ -198,7 +198,7 @@ body{
 
 .hostSection{
     display: inline-flex;
-    width: 50%;
+    
    
 }
 
@@ -220,7 +220,12 @@ body{
 #timname{
     margin-right:200px;
 }
+.picemail img{
+    
+    width: 350px;
+    height: auto;
 
+}
 .hostp{
     width:90%;
     height: 258px;
@@ -230,7 +235,7 @@ body{
     font-family: "Open Sans" sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 19px;
 
     color: #FFFFFF;
