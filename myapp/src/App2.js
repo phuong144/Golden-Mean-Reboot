@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import {Homepage} from './components2/Homepage';
 import {Episodes} from './components2/Episodes';
 import {About} from './components2/About';
-
+import {Subscribe} from './components2/Subscribe';
 class App2 extends Component {
   constructor(props){
     super(props);
@@ -25,7 +25,8 @@ class App2 extends Component {
              
             <Route exact path='/' component={Homepage} />  
             <Route path='/Episodes' component={Episodes} />
-            <Route path='/About' component={About} />                                 
+            <Route path='/About' component={About} />       
+            <Route path='/Subscribe' component={Subscribe} />                             
           </div>
         
       </Router>
