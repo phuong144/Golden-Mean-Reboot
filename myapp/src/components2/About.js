@@ -65,7 +65,7 @@ function Hosts(props){
             <div id="swan" className="hostSection">
                 <div id="aboutswan" className="hostdescription">
                     <p id="swanname" className="hostname">Swan Ye Htut</p>
-                    <p id="swanabout" className="hostp">Swan is a Global Studies major studying at UCLA! In high school, he was very active in the volunteer club of Interact. Now at UCLA, his involvements include being on a dance team, serving on his dorm’s government council and acting as a Cub Tour Guide for K-8 students.</p>
+                    <p id="swanabout" className="hostp">Swan is a Sociology and Global Studies double-major student at UCLA! He immigrated to the United States from his home country of Myanmar (Burma) at the age of 8. He aspires to be a professor in higher education in the future. In his free time, he likes to play video games and spend time with friends and family</p>
                 </div>
                
 
