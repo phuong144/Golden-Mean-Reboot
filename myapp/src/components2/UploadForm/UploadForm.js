@@ -37,6 +37,10 @@ export class UploadForm extends React.Component{
         
     }
 
+    componentWillUnmount(){
+        app.auth().signOut();
+    }
+
     handleTitleChange(e){        
         this.setState({
             Title: e.target.value,              
@@ -96,7 +100,7 @@ export class UploadForm extends React.Component{
 
     render(){
         return(
-            <form>
+            <form style={{marginTop: "30px"}}>
                 <input placeholder="Title" type="text" value={this.state.Title} onChange={this.handleTitleChange} required />
                 <input placeholder="Introduction" type="text"  value={this.state.Intro} onChange={this.handleIntroChange} required />
                 <input placeholder="Description" type="text"  value={this.state.Description} onChange={this.handleDescriptionChange} required />
@@ -106,7 +110,7 @@ export class UploadForm extends React.Component{
                 <FileUploader
                     accept="audio/mpeg"
                     name="avater"
-                    
+                    style={{width:"190px"}}
                     storageRef={app.storage().ref("podcasts")}
                     onUploadStart={this.handleUploadStart}
                     onUploadError={this.handleUploadError}

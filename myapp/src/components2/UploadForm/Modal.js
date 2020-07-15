@@ -22,12 +22,18 @@ export const Modal = ({
         onKeyDown={onKeyDown}
       >
         <div className="modal-area" ref={modalRef}>
+          
+          <div className="modal-body">
+            <UploadForm />
+          </div>
           <button
             ref={buttonRef}
             aria-label="Close Modal"
             aria-labelledby="close-modal"
             className="_modal-close"
             onClick={closeModal}
+            style={{height: "21px", 
+            }}
           >
             <span id="close-modal" className="_hide-visual">
               Close
@@ -36,9 +42,6 @@ export const Modal = ({
               <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
             </svg>
           </button>
-          <div className="modal-body">
-            <UploadForm />
-          </div>
         </div>
       </aside>
     </FocusTrap>,

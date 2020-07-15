@@ -13,8 +13,9 @@ export class Subscribe extends React.Component{
         this.state = {
             email:"Gmail Address",
             pass:"",
+            isAdmin:false,
             admin:false,
-            isSignedIn:false,
+            
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -29,15 +30,33 @@ export class Subscribe extends React.Component{
           signInSuccessWithAuthResult: () => window.scrollTo(0,0)
         }
     }
+
     componentDidMount = () => {
         app.auth().onAuthStateChanged(user => {
             if(user){
-                this.setState({
-                    isSignedIn:true,
-                })
+                let docRef = app.firestore().collection('admins2').doc(user.email);  
+                docRef.get().then(function(doc){
+                    if(doc.exists){
+                        
+                        console.log(user.uid, user);
+                        this.setState({
+                            isAdmin:true,
+                            admin: true
+
+                        })
+                        
+                    }else{
+                        this.setState({
+                            isAdmin:false,
+                            admin:false,
+                        })
+                        console.log("User not admin");
+                    }
+                }.bind(this))
             }else {
                 this.setState({
-                    isSignedIn:false,
+                    isAdmin:false,
+                    admin:false,
                 })
             }
         })             
@@ -51,8 +70,7 @@ export class Subscribe extends React.Component{
         email.get().then(function(doc){
             if(doc.exists){
                 if(email.id == "timothyscheuermann@gmail.com" || email.id == "swanyehtut@g.ucla.edu" || email.id == "goldenmeants@gmail.com"){
-                    console.log("admin");
-                    this.setState({admin:true})
+                    this.setState({isAdmin:true})
                 }else{
                     alert("Already Subscribed!");
                 }
@@ -128,10 +146,10 @@ export class Subscribe extends React.Component{
                             <a>Instagram</a>
                         </div>
                     </div>
-                    {this.state.admin ? 
+                    {this.state.isAdmin ? 
 
                             
-                                this.state.isSignedIn? 
+                                this.state.admin? 
 
                                 (
                                     <Container />
