@@ -4,6 +4,17 @@ body{
     overflow-x: hidden;
 }
 
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+{ @media {
+    /*
+      Define here the CSS styles applied only to Safari browsers
+      (any version and any device)
+     */
+     #hlogo{
+        margin-top:0px !important;
+     }
+}}
+
 #homepage{
     /*
     position: relative;
@@ -58,7 +69,7 @@ body{
     margin-top: 330px;
     
     margin-left: auto;
-   
+   -webkit-align-self:flex-start;
     
 }
 
