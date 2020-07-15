@@ -139,12 +139,7 @@ export class Subscribe extends React.Component{
                 <div id="subscribefooter">
                     <div id="sfleft"> 
                         <img src={require("./images/Logo.jpg")}/>
-                        <div>
-                            <p>Follow us on</p>
-                            <a>Facebook</a>
-                            <a>Twitter</a>
-                            <a>Instagram</a>
-                        </div>
+                        
                     </div>
                     {this.state.isAdmin ? 
 

@@ -4,6 +4,21 @@ body{
     overflow-x: hidden;
 }
 
+@media (max-width:1300px) {
+    #hosts{
+        display: grid !important;
+    }
+    #About{
+        height:1612px !important;
+    }
+    #AboutBackground{
+        height:1612px !important;
+    }
+    #funfact{
+        display:none !important;
+    }
+}
+
 @media (max-width: 576px) {
     #AboutBackground{
         height: auto !important;

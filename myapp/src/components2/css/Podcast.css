@@ -18,7 +18,7 @@
 }
 
 #right{
-    margin-left: 240px;
+    margin-left: 250px;
 }
 
 #rows{
@@ -46,8 +46,8 @@
 }
 #Podnum{
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 230px;
     
 
     background: #E6BB5C;
@@ -72,10 +72,9 @@
 }
 #podcast {
     
-    width: 85%;
-    height: 220px;
-    left: 143px;
-    top: 265px;
+    width: 92%;
+    height: 230px;
+    
 
     background: #E5E5E5;
     margin-left:auto;
@@ -121,7 +120,7 @@
     height: 45.29px;
     left: 378px;
     top: 401px;
-    
+    margin-top:10px;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 30px;
 }

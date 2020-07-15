@@ -113,6 +113,8 @@ function Footer(props) {
                 <p id="f3">
                     Developed by Patrick Phuong and Anson Lee
                     <br></br>
+                    Designed by Lianna Kishi
+                    <br></br>
                     pphuong@ucsc.edu - all197@ucsd.edu
                 </p>
             
