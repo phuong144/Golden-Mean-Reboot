@@ -21,15 +21,15 @@ export class Podcast extends React.Component{
     componentDidMount(){
         let docRef = app.firestore().collection("podcasts").doc("pod"+this.props.num);
         docRef.get().then(function(doc){
-          
+            let title = doc.data().title;
+            let id = title.substring(16);
             
-            //console.log(Id);
             this.setState({
                 title: doc.data().title,
                 url: doc.data().url,
                 intro: doc.data().intro,
                 description: doc.data().description,
-                id:this.props.num,
+                id:id,
                 even:this.props.num % 2 == 0 ? true:false,
             });
         }.bind(this));
