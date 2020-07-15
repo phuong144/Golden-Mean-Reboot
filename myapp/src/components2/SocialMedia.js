@@ -23,7 +23,7 @@ export class SocialMedia extends React.Component{
                     
                     <a className="media" target="_blank" href="https://soundcloud.com/user-116024648"><img id="soundcloud" src={require("./images/soundcloud.png")}></img><p>Sound<br></br>cloud</p></a>
                     
-                    <a className="media" target="_blank" href="https://www.google.com/"><img id="stitcher" src={require("./images/stitcher.png")}></img><p>Stitcher</p></a>
+                    <a className="media" target="_blank" href="https://www.stitcher.com/podcast/the-golden-mean-podcast?fbclid=IwAR1HIwn-eC58ut7-rOSPe1RS0MQYUi0Ei5pnyc33kIJexsieZ6J13aMuenI"><img id="stitcher" src={require("./images/stitcher.png")}></img><p>Stitcher</p></a>
                     
                     <a className="media" target="_blank" href="https://open.spotify.com/show/2o4i9OCFtPNexR2yxiDUHw?si=JTeSEd7SRBOXqV4sh_j2dA"><img id="spotify" src={require("./images/spotify.png")}></img><p>Spotify</p></a>
                     

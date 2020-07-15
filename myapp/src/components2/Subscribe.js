@@ -48,21 +48,27 @@ export class Subscribe extends React.Component{
         
        
         let email = app.firestore().collection("MailingList2").doc(this.state.email);
-
-        if(email.id == "timothyscheuermann@gmail.com" || email.id == "swanyehtut@g.ucla.edu" || email.id == "pat@test.com"){
-            console.log("admin");
-            this.setState({admin:true})
-        }else{
-            email.get().then(function(doc){
-                if(!doc.exists){
-                    email.set({
-                        subscribed:true,
-                    })
+        email.get().then(function(doc){
+            if(doc.exists){
+                if(email.id == "timothyscheuermann@gmail.com" || email.id == "swanyehtut@g.ucla.edu" || email.id == "goldenmeants@gmail.com"){
+                    console.log("admin");
+                    this.setState({admin:true})
+                }else{
+                    alert("Already Subscribed!");
                 }
-            }.bind(this))
-            //alert("Signed Up!");
+            }else{
+                email.get().then(function(doc){
+                    if(!doc.exists){
+                        email.set({
+                            subscribed:true,
+                        })
+                    }
+                }.bind(this))
+                alert("Subscribed!");
+            }
+
             
-        }
+        }.bind(this))
         e.preventDefault();
        
         
@@ -101,7 +107,7 @@ export class Subscribe extends React.Component{
                             <img src={require("./images/soundcloud2.png")}/> 
                             <p>SoundCloud</p>   
                         </a>
-                        <a target="_blank" href="https://www.google.com/">
+                        <a target="_blank" href="https://www.stitcher.com/podcast/the-golden-mean-podcast?fbclid=IwAR1HIwn-eC58ut7-rOSPe1RS0MQYUi0Ei5pnyc33kIJexsieZ6J13aMuenI">
                             <img src={require("./images/stitcher2.png")}/>  
                             <p>Stitcher</p>  
                         </a>
