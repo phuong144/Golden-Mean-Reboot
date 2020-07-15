@@ -21,7 +21,7 @@ export class SocialMedia extends React.Component{
                 <div id="logolinks">
                     <a className="media" target="_blank" href="https://podcasts.apple.com/us/podcast/the-golden-mean-podcast/id1506294853?fbclid=IwAR1oBJDXgJ3awmwvYlF9urCjlMO9uSXRuGAmDqiinYJ02ZsZkMk-NqeNu40"><img id="itunes" src={require("./images/itunes.png")}></img><p>iTunes</p></a>
                     
-                    <a className="media" target="_blank" href="https://soundcloud.com/user-116024648"><img id="soundcloud" src={require("./images/soundcloud.png")}></img><p>Sound<br></br>cloud</p></a>
+                    <a className="media" target="_blank" href="https://soundcloud.com/user-116024648"><img id="soundcloud" src={require("./images/soundcloud.png")}></img><p id="sc" >Soundcloud</p></a>
                     
                     <a className="media" target="_blank" href="https://www.stitcher.com/podcast/the-golden-mean-podcast?fbclid=IwAR1HIwn-eC58ut7-rOSPe1RS0MQYUi0Ei5pnyc33kIJexsieZ6J13aMuenI"><img id="stitcher" src={require("./images/stitcher.png")}></img><p>Stitcher</p></a>
                     

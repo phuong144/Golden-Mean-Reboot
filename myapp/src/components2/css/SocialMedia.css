@@ -2,10 +2,10 @@
     #findus{
         width: 100% !important;
         margin: auto;
-        margin-bottom:25px;
+       
     }
     #logolinks{
-        margin-top: -30px !important;
+        margin-top: -40px !important;
     }
     .media{
         margin:10px !important;
@@ -89,4 +89,9 @@ a{
 
 .media p{
     display:block !important;
+}
+
+#sc{
+    position: absolute;
+    margin-left:-10px;
 }
