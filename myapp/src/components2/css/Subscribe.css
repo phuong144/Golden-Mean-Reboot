@@ -59,7 +59,7 @@
 }
 
 #SubscribeTitle{
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 72px;
@@ -74,7 +74,7 @@
 }
 
 #SubscribeDescription{
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -104,7 +104,7 @@
 #platformbox p{
     text-align: center;
     text-decoration: none !important;
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -127,7 +127,7 @@
     padding-top: 18px;
 }
 #sfleft p{
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -137,7 +137,7 @@
 }
 #sfleft a{
     display:block;
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -159,7 +159,7 @@
 }
 
 #sfright p{
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;

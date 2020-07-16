@@ -4,17 +4,6 @@ body{
     overflow-x: hidden;
 }
 
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
-{ @media {
-    /*
-      Define here the CSS styles applied only to Safari browsers
-      (any version and any device)
-     */
-     #hlogo{
-        margin-top:0px !important;
-     }
-}}
-
 #homepage{
     /*
     position: relative;
@@ -89,7 +78,7 @@ body{
     height: 18px;
     
 
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -108,7 +97,7 @@ body{
     left: 878px;
     top: 2219px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -124,7 +113,7 @@ body{
     left: 824px;
     top: 2248px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -237,7 +226,7 @@ body{
     
     width: 709px;
 
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -251,7 +240,7 @@ body{
     width: 556px;
    
 
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -285,7 +274,7 @@ body{
 
 #htitle{
     
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -296,7 +285,7 @@ body{
 
 #description{
     width: auto;   
-    font-family: "Open Sans" sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -326,7 +315,7 @@ body{
     height:60px;
     
     
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;

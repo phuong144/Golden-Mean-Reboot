@@ -31,7 +31,7 @@
     width: 100%;
  
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 64px;
@@ -60,7 +60,7 @@
     left: 143px;
     top: 291px;
     
-    font-family: Oswald;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 86px;
@@ -88,7 +88,7 @@
     left: 379px;
     top: 276px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -104,7 +104,7 @@
     left: 379px;
     top: 314px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -150,7 +150,7 @@
     height: 50px;
     
     
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
