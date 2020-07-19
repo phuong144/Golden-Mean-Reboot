@@ -55,7 +55,7 @@ body{
     width: 50%;
     height: auto;
     margin-right: auto;
-    margin-top: 330px;
+    
     
     margin-left: auto;
    -webkit-align-self:flex-start;
@@ -132,7 +132,7 @@ body{
     width: 709px;
     height: 881px;
     left: 60px;
-    margin-top: 171px;
+    
     margin-left:60px;
 
 }
@@ -258,7 +258,7 @@ body{
 
     margin-right: 10px;
     width: 55%;
-    margin-top: 0px;
+    margin-top: 200px;
     float: right;
    
     padding-bottom: 60px;
