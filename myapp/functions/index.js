@@ -1,14 +1,14 @@
 const functions = require('firebase-functions');
 const firebase = require("firebase-admin");
 const nodemailer = require('nodemailer');
-const gmail = require('./gmail-config');
+//const gmail = require('./gmail-config');
 firebase.initializeApp();
 
 let transporter = nodemailer.createTransport({
     service:'gmail',
     auth: {
-        user: gmail.user,
-        pass: gmail.pass
+        user: functions.config().gmail.user,
+        pass: functions.config().gmail.pass,
     }
 });
 
@@ -16,6 +16,7 @@ let transporter = nodemailer.createTransport({
 //This Function will be an Authentication trigger that adds a users email and name to
 //firestore that is essentially the emailing subscribers list
 
+/*
 exports.addEmailList = functions.auth.user().onCreate((user) => {
     const email = user.email;
     const displayName = user.displayName;
@@ -31,7 +32,7 @@ exports.addEmailList = functions.auth.user().onCreate((user) => {
         console.log('Added to mailing list');
     });
     return uid;
-});
+});*/
 
 
 
