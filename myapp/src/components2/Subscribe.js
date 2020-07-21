@@ -77,12 +77,19 @@ export class Subscribe extends React.Component{
             }else{
                 email.get().then(function(doc){
                     if(!doc.exists){
-                        email.set({
-                            subscribed:true,
-                        })
+                        let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                        if(this.state.email === "Gmail Address" || !regex.test(this.state.email)){
+                            alert("Please enter a valid gmail address");
+                        }else{
+                            email.set({
+                                subscribed:true,
+                            })
+                            alert("Subscribed!");
+                        }
+                        
                     }
                 }.bind(this))
-                alert("Subscribed!");
+                
             }
 
             
