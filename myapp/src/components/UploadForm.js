@@ -8,8 +8,6 @@ import FileUploader from 'react-firebase-file-uploader';
 export class UploadForm extends React.Component{
     constructor(props){
         super(props);
-
-        
         this.state=({
             Title:"",
             Intro:"",

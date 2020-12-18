@@ -5,6 +5,7 @@ import {SocialMedia} from "./SocialMedia";
 import app from "firebase/app";
 import 'firebase/firestore';
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import Hidden from '@material-ui/core/Hidden';
 
 export class Homepage extends React.Component{
     constructor(props){
@@ -47,8 +48,9 @@ export class Homepage extends React.Component{
                 
                 <Navbar />
                 <Intro />
-                
-                <LatestEp title={this.state.title + ": "+this.state.intro} description={this.state.description} url={this.state.url}/>
+                <Hidden xsDown>
+                  <LatestEp title={this.state.title + ": "+this.state.intro} description={this.state.description} url={this.state.url}/>
+                </Hidden>
                 <AllEp />
                 <SocialMedia />
                 </div>
